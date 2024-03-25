@@ -6,14 +6,18 @@ public class EnemyStats : MonoBehaviour
 {
     public GameObject enemyRef, playerRef;
     public string enemyName;
+    public string[] barkText;
     public bool dead, infliction; 
     public int health, block, overHeat, electrified;// health and various stats
-    public int point1, point2, point3, point4, point5; // atk patterns for ai
+    private int point1, point2, point3, point4, point5; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
     public string inflictionNameSpace;
+ 
+
     void Start()
     {
         enemyRef = this.gameObject;
+        playerRef = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -23,8 +27,16 @@ public class EnemyStats : MonoBehaviour
         {
             if (inflictionNameSpace == "overheat")
             {
-
+                playerRef.GetComponent<PlayerStats>().overHeatStorage = overHeat;
+            }
+            if (inflictionNameSpace == "electrified")
+            {
+                playerRef.GetComponent<PlayerStats>().electrifiedStorage = electrified;
             }
         }
+    }
+    public void enemyEffects()
+    {
+
     }
 }

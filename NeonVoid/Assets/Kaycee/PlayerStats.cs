@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health, sunnyD, shield, overHeat, electrified;
+    public int health, sunnyD, shield, overHeat, electrified, overHeatStorage, electrifiedStorage;
+    public string[] barkTextPlayer;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,9 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         
+    }
+    public void playerEffects()
+    {
+
     }
 }
