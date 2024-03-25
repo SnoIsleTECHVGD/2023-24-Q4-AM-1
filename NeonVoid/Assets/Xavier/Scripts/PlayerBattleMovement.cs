@@ -7,11 +7,12 @@ public class PlayerBattleMovement : MonoBehaviour
 
     private Vector3 targetPosition = Vector3.zero; // Target position
     private float moveSpeed = 5f; // Movement speed
+    private bool isMoving = false; // Flag to check if the player is currently moving
 
     void Update()
     {
-        // Check for mouse click
-        if (Input.GetMouseButtonDown(0))
+        // Check if not currently moving and mouse click detected
+        if (!isMoving && Input.GetMouseButtonDown(0))
         {
             // Get the mouse position in world space
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -32,18 +33,19 @@ public class PlayerBattleMovement : MonoBehaviour
     {
         int closestPointIndex = FindClosestPointIndex(position);
         targetPosition = points[closestPointIndex].position;
+        isMoving = true; // Set moving flag to true
     }
 
     void MovePlayer()
     {
-        if (targetPosition != Vector3.zero)
+        if (isMoving)
         {
             player.position = Vector3.MoveTowards(player.position, targetPosition, moveSpeed * Time.deltaTime);
 
             // Check if player has reached the target position
             if (Vector3.Distance(player.position, targetPosition) < 0.1f)
             {
-                targetPosition = Vector3.zero; // Reset target position once reached
+                isMoving = false; // Reset moving flag once reached the target
             }
         }
     }
