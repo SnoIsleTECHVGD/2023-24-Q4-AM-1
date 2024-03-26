@@ -438,12 +438,17 @@ MonoBehaviour:
   playerRef: {fileID: 0}
   enemyName: 
   barkText: []
+  LocationPoints: []
+  currentPlayerLoc: 0
+  attackPoint: 0
   dead: 0
   infliction: 0
   health: 0
   block: 0
   overHeat: 0
   electrified: 0
+  electrifiedEnemy: 0
+  overHeatEnemy: 0
   damage: 0
   specialEffect: 0
   inflictionNameSpace: 
@@ -461,6 +466,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1711687242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711687244}
+  - component: {fileID: 1711687243}
+  m_Layer: 0
+  m_Name: tempBattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1711687243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711687242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b614c078ea3f05a43ad3c6d26ce0d4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards: []
+  BattlePoints: []
+  cardTransform: []
+  playerLoc: 0
+  Enemy: {fileID: 0}
+  player: {fileID: 0}
+  currentDeck: []
+  deckSave: []
+  currentPlayerLoc: {fileID: 0}
+  activeHand: []
+  RandomValue: 0
+  nextDraw: {fileID: 0}
+  addToHand: {fileID: 0}
+  cardLimit: 0
+  drawCard: 0
+  cardsInHand: 0
+  deckSize: 0
+  discard: []
+--- !u!4 &1711687244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711687242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.334833, y: -3.7147522, z: 0.98485255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017030653
 GameObject:

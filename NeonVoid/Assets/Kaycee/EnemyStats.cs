@@ -37,14 +37,15 @@ public class EnemyStats : MonoBehaviour
             }
         }
     }
-    //ai work, will call this when its time to
+    //what i'll probably do is have multiple tags that will dictate what script to call on, that way we might be able to keep this script as the 'universal' ai script, with other minor ai scripts to go with it
     // Initial attack brodcast, dictates where the enemy will hit next on round start
     public void attackBroadcast() 
     {
         while (attackPoint != currentPlayerLoc)
         {
-
+            
             attackPoint++;
+            
         }
     }
      public void enemyMechanics()
