@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public string enemyName;
     public string[] barkText;
     public bool dead, infliction; 
-    public int health, block, overHeat, electrified;// health and various stats
+    public int health, block, overHeat, electrified, electrifiedEnemy, overHeatEnemy;// health and various stats
     private int point1, point2, point3, point4, point5; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
     public string inflictionNameSpace;
@@ -37,6 +37,13 @@ public class EnemyStats : MonoBehaviour
     }
     public void enemyEffects()
     {
-
+        if(overHeatEnemy == 5)
+        {
+            // do over heat function (end turn)
+        }
+        if (electrified > 0)
+        {
+           health = health - electrifiedEnemy;
+        }
     }
 }
