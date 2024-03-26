@@ -66,4 +66,4 @@ MonoBehaviour:
   m_Name: FullScreenRenderPassFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  material: {fileID: -876546973899608171, guid: 913ea73d0e204104bb77de36fb395ec5, type: 3}
+  material: {fileID: 2100000, guid: 6817dbcc64c60394bb4f563d175156dd, type: 2}

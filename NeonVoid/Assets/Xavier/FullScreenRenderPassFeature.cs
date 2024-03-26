@@ -31,7 +31,7 @@ public class FullScreenRenderPassFeature : ScriptableRendererFeature
 
             tempTexture =
                 RTHandles.Alloc(
-                    new RenderTargetIdentifier("_Texture"),
+                    new RenderTargetIdentifier("_TempTexture"),
                     name: "_TempTexture");
         }
 

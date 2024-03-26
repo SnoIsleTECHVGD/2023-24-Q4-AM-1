@@ -31,9 +31,6 @@
             "m_Id": "7503d0a72e334ecf8338dcc3d207313f"
         },
         {
-            "m_Id": "f3734942c0c14997b11f93f209ad8a77"
-        },
-        {
             "m_Id": "28e979579f8c4916ae7887bcc77d467c"
         },
         {
@@ -125,8 +122,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 45.999996185302737,
+            "y": -128.00001525878907
         },
         "m_Blocks": [
             {
@@ -142,24 +139,21 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 45.999996185302737,
+            "y": 71.99999237060547
         },
         "m_Blocks": [
             {
                 "m_Id": "7503d0a72e334ecf8338dcc3d207313f"
-            },
-            {
-                "m_Id": "f3734942c0c14997b11f93f209ad8a77"
             }
         ]
     },
     "m_PreviewData": {
         "serializedMesh": {
-            "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
+            "m_SerializedMesh": "{\"mesh\":{\"fileID\":10210,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
         },
-        "preventRotation": false
+        "preventRotation": true
     },
     "m_Path": "Shader Graphs",
     "m_GraphPrecision": 1,
@@ -172,6 +166,12 @@
             "m_Id": "90ee3eba53114900b552a4c110ebbebb"
         }
     ]
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
+    "m_ObjectId": "0413ab83dffe4c7e9ee0640372435725"
 }
 
 {
@@ -438,21 +438,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "4da72dbd0f2f4ef2926a6d5783acf8e6",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Alpha",
-    "m_StageCapability": 2,
-    "m_Value": 1.0,
-    "m_DefaultValue": 1.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "508225f811194bca82aa420577ecfd0d",
     "m_Id": 0,
     "m_DisplayName": "Pixel Rate",
@@ -673,7 +658,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "90ee3eba53114900b552a4c110ebbebb",
     "m_ActiveSubTarget": {
-        "m_Id": "c1eca48abc9b48a5b09f27280dd8bc18"
+        "m_Id": "0413ab83dffe4c7e9ee0640372435725"
     },
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 0,
@@ -682,7 +667,7 @@
     "m_AlphaMode": 0,
     "m_RenderFace": 2,
     "m_AlphaClip": false,
-    "m_CastShadows": true,
+    "m_CastShadows": false,
     "m_ReceiveShadows": true,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
@@ -870,18 +855,12 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 10.0,
+    "m_Value": 5.0,
     "m_FloatType": 2,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalSpriteUnlitSubTarget",
-    "m_ObjectId": "c1eca48abc9b48a5b09f27280dd8bc18"
 }
 
 {
@@ -959,40 +938,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "f3734942c0c14997b11f93f209ad8a77",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.Alpha",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "4da72dbd0f2f4ef2926a6d5783acf8e6"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.Alpha"
 }
 
 {
