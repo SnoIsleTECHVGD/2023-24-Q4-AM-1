@@ -33,7 +33,7 @@ public class PlayerBattleMovement : MonoBehaviour
     {
         int closestPointIndex = FindClosestPointIndex(position);
         targetPosition = points[closestPointIndex].position;
-        isMoving = true; // Set moving flag to true
+        isMoving = true; // Set moving to true
     }
 
     void MovePlayer()
@@ -45,7 +45,7 @@ public class PlayerBattleMovement : MonoBehaviour
             // Check if player has reached the target position
             if (Vector3.Distance(player.position, targetPosition) < 0.1f)
             {
-                isMoving = false; // Reset moving flag once reached the target
+                isMoving = false; // Reset moving once reached the target
             }
         }
     }
