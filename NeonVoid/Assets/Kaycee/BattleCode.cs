@@ -10,6 +10,8 @@ public class BattleCode : MonoBehaviour
     #region refrences and assets
     public GameObject[] cards; // card ref
     public Transform[] BattlePoints;// battle point ref
+    public Transform[] cardTransform;
+    public int playerLoc;
     public GameObject Enemy; // enemy ref
     public GameObject player; // player ref
     public List <GameObject> currentDeck;// the players current deck, may need to figure out how to set and remove values
@@ -61,7 +63,7 @@ public class BattleCode : MonoBehaviour
     public void roundStart()
     {
         DrawHand();
-        turnActive = true;
+        
     }
  
     public void roundEnd()
@@ -86,13 +88,20 @@ public class BattleCode : MonoBehaviour
             if(nextDraw != null)
             {
                 activeHand.Add(nextDraw);
+                nextDraw = null;
             }
             if (nextDraw == null)
             {
                 RandomValue = Random.Range(0, deckSize);
-                
+
                 activeHand.Add(currentDeck[RandomValue]);
+                currentDeck.RemoveAt(RandomValue);
+                turnActive = true;
             }
+        }
+        while(cardLimit == cardsInHand)
+        {
+          //do turn or various functions
         }
     }
 
