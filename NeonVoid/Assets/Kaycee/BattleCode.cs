@@ -50,7 +50,7 @@ public class BattleCode : MonoBehaviour
         }
         if (turnReady == true)
         {
-
+            // probably utilize a function to turn off selection of different cards
         }
 
         if (turnActive == false)
