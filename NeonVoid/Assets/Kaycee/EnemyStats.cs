@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -13,7 +14,7 @@ public class EnemyStats : MonoBehaviour
     public int currentPlayerLoc, attackPoint;
     public bool dead, infliction, utilityBool;// Utility is just gonna be something i set true or false for special mechanics if need be 
     public int health, block, overHeat, electrified, electrifiedEnemy, overHeatEnemy, healthStorage, staggerHealth;// health and various stats
-    private int point1, point2, point3, point4, point5, point6; // atk patterns for ai
+    public int point1, point2, point3, point4, point5, point6; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
     public string inflictionNameSpace;
     public int randomizedAtkVal, moveLimit, moveStorage;
@@ -52,6 +53,7 @@ public class EnemyStats : MonoBehaviour
                     point4 = 7;
                     point5 = 7;
                     point6 = 7;
+                    utilityBool = false;
                 }
             }
         }
@@ -130,6 +132,7 @@ public class EnemyStats : MonoBehaviour
                 point4 = 4;
                 point5 = 5;
                 point6 = 6;
+               
                 
             }
         else

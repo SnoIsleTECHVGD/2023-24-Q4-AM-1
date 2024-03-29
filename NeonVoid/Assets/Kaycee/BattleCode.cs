@@ -22,7 +22,10 @@ public class BattleCode : MonoBehaviour
     public int RandomValue;// randomizes the order for when cards are drawn
     public GameObject nextDraw, addToHand; // for when cards influnce draw order, and we cant just randomize it out 
     public int cardLimit, drawCard, cardsInHand, deckSize; // card and deck ints
+    public List <int> pointVal;
     public List <GameObject> discard;
+
+
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -69,6 +72,18 @@ public class BattleCode : MonoBehaviour
     public void RoundEnd()
     {
         turnActive = false;
+        pointVal.Add(GetComponent<EnemyStats>().point1);
+        pointVal.Add(GetComponent<EnemyStats>().point2);
+        pointVal.Add(GetComponent<EnemyStats>().point3);
+        pointVal.Add(GetComponent<EnemyStats>().point4);
+        pointVal.Add(GetComponent<EnemyStats>().point5);
+        pointVal.Add(GetComponent<EnemyStats>().point6);
+        //foreach (int in pointVal)
+        {
+
+        }
+        
+
     }
     public void ExitCombat()
     {
@@ -98,6 +113,7 @@ public class BattleCode : MonoBehaviour
                 currentDeck.RemoveAt(RandomValue);
                 turnActive = true;
             }
+
         }
         while(cardLimit == cardsInHand)
         {
