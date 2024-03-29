@@ -46,7 +46,7 @@ public class FullScreenRenderPassFeature : ScriptableRendererFeature
             RenderTextureDescriptor targetDescriptor =
                 renderingData.cameraData.cameraTargetDescriptor;
 
-                targetDescriptor.depthBufferBits = 0;
+            targetDescriptor.depthBufferBits = 0;
 
             commandBuffer.GetTemporaryRT(
                 Shader.PropertyToID(tempTexture.name), targetDescriptor, FilterMode.Bilinear);
@@ -83,5 +83,3 @@ public class FullScreenRenderPassFeature : ScriptableRendererFeature
         renderer.EnqueuePass(m_ScriptablePass);
     }
 }
-
-
