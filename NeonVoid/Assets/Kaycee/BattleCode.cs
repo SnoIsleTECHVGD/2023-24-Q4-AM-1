@@ -35,18 +35,18 @@ public class BattleCode : MonoBehaviour
     {
         if (turnActive == true)
         {
-            player.GetComponent<PlayerStats>().playerEffects();
-            Enemy.GetComponent<EnemyStats>().enemyEffects();
-            roundStart();
+            player.GetComponent<PlayerStats>().PlayerEffects();
+            Enemy.GetComponent<EnemyStats>().EnemyEffects();
+            RoundStart();
         }
         if (Enemy.GetComponent<EnemyStats>().health >= 0)
         {
-            exitCombat();
+            ExitCombat();
         }
         if (player.GetComponent<PlayerStats>().health == 0)
         {
             //skill issue
-            gameOver();
+            GameOver();
         }
         if (turnReady == true)
         {
@@ -55,26 +55,26 @@ public class BattleCode : MonoBehaviour
 
         if (turnActive == false)
         {
-            roundEnd();
+            RoundEnd();
         }
 
     }
     #region round controller
-    public void roundStart()
+    public void RoundStart()
     {
         DrawHand();
         
     }
  
-    public void roundEnd()
+    public void RoundEnd()
     {
         turnActive = false;
     }
-    public void exitCombat()
+    public void ExitCombat()
     {
         // do exit combat function
     }
-    public void gameOver()
+    public void GameOver()
     {
         // end game
     }

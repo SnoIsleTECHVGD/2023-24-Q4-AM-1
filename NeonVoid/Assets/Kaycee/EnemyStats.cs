@@ -42,7 +42,7 @@ public class EnemyStats : MonoBehaviour
     }
     //what i'll probably do is have multiple tags that will dictate what script to call on, that way we might be able to keep this script as the 'universal' ai script, with other minor ai scripts to go with it
     // Initial attack brodcast, dictates where the enemy will hit next on round start
-     IEnumerator attackBroadcast() 
+     IEnumerator AttackBroadcast() 
     {
         isWhiling = true;
         while (attackPoint != currentPlayerLoc)
@@ -55,7 +55,7 @@ public class EnemyStats : MonoBehaviour
         isWhiling = false;
         
     }
-     public void enemyMechanics()
+     public void EnemyMechanics()
     {
        if(Boss == true)
         {
@@ -82,12 +82,13 @@ public class EnemyStats : MonoBehaviour
                 moveLimit = moveStorage;
             }
             if(moveLimit == 2 && moveLimit != moveStorage)
-            { 
-
+            {
+                point1 = 7;
                 point2 = attackPoint - 1;
                 point3 = attackPoint - 2;
                 point4 = attackPoint - 3;
                 point5 = attackPoint - 4;
+                moveLimit = moveStorage;
             }
             if(moveLimit == 3 && moveLimit != moveStorage)
             {
@@ -99,11 +100,11 @@ public class EnemyStats : MonoBehaviour
             }else
             {
                 randomizedAtkVal = Random.Range(0, moveLimit);
-                enemyMechanics();
+                EnemyMechanics();
             }
         }
     }
-    public void enemyEffects()
+    public void EnemyEffects()
     {
         if(overHeatEnemy == 5)
         {

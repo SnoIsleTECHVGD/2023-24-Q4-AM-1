@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
-    public void playerEffects()
+    public void PlayerEffects()
     {
 
     }
