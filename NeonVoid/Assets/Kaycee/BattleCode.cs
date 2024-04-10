@@ -53,7 +53,8 @@ public class BattleCode : MonoBehaviour
         }
         if (turnReady == true)
         {
-            // probably utilize a function to turn off selection of different cards
+
+           turnReady = false; 
         }
 
         if (turnActive == false)
@@ -78,10 +79,7 @@ public class BattleCode : MonoBehaviour
         pointVal.Add(GetComponent<EnemyStats>().point4);
         pointVal.Add(GetComponent<EnemyStats>().point5);
         pointVal.Add(GetComponent<EnemyStats>().point6);
-        //foreach (int in pointVal)
-        {
-
-        }
+        
         
 
     }
@@ -115,9 +113,9 @@ public class BattleCode : MonoBehaviour
             }
 
         }
-        while(cardLimit == cardsInHand)
+        if(cardLimit == cardsInHand)
         {
-          //do turn or various functions
+          turnReady = true;
         }
     }
 

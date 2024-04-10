@@ -38,6 +38,7 @@ public class EnemyStats : MonoBehaviour
             {
                 playerRef.GetComponent<PlayerStats>().electrifiedStorage = electrified;
             }
+            
         }
         if(utilityBool == true)
         {

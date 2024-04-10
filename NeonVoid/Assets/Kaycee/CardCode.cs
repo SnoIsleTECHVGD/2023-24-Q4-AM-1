@@ -12,7 +12,7 @@ public class CardCode : ScriptableObject
     #region Assests bools and refs
     public string cardName;
     public bool power, attack, skill, movement, specialCase, fleeting, inflictStatus, Common, Rare, Legendary;
-    public bool overHeat, electrified, block, overCharge;
+    public bool overHeat, electrified, block, overCharge, Vulnerable;
     public int damage, moveAmount, cost, inflictNum;
     #endregion
 
