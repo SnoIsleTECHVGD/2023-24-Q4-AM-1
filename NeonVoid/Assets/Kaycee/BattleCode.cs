@@ -21,7 +21,7 @@ public class BattleCode : MonoBehaviour
     public List <GameObject> activeHand; // what the player has in their hand
     public int RandomValue;// randomizes the order for when cards are drawn
     public GameObject nextDraw, addToHand; // for when cards influnce draw order, and we cant just randomize it out 
-    public int cardLimit, drawCard, cardsInHand, deckSize; // card and deck ints
+    public int cardLimit, drawCard, cardsInHand , deckSize; // card and deck ints
     public List <int> pointVal;
     public List <GameObject> discard;
 

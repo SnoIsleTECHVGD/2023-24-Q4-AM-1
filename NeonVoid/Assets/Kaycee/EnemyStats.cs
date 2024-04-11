@@ -9,14 +9,14 @@ public class EnemyStats : MonoBehaviour
     public string enemyName;
     public bool Enemy01, Boss;
     public string[] barkText;
-    public GameObject[] LocationPoints;
+    private GameObject[] LocationPoints;
     public int currentPlayerLoc, attackPoint;
     public bool dead, infliction, utilityBool;// Utility is just gonna be something i set true or false for special mechanics if need be 
     public int health, block, overHeat, electrified, electrifiedEnemy, overHeatEnemy, healthStorage, staggerHealth;// health and various stats
     public int point1, point2, point3, point4, point5, point6; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
     public string inflictionNameSpace;
-    public int randomizedAtkVal, moveLimit, moveStorage;
+    private int randomizedAtkVal, moveLimit, moveStorage;
 
     public bool isWhiling;
     void Start()
@@ -28,7 +28,7 @@ public class EnemyStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(infliction == true)
+        if (infliction == true)
         {
             if (inflictionNameSpace == "overheat")
             {
@@ -38,14 +38,14 @@ public class EnemyStats : MonoBehaviour
             {
                 playerRef.GetComponent<PlayerStats>().electrifiedStorage = electrified;
             }
-            
+
         }
-        if(utilityBool == true)
+        if (utilityBool == true)
         {
-            if(Boss == true)
+            if (Boss == true)
             {
                 staggerHealth = healthStorage - health;
-                if(staggerHealth >= 20)
+                if (staggerHealth >= 20)
                 {
                     point1 = 7;
                     point2 = 7;
@@ -60,18 +60,22 @@ public class EnemyStats : MonoBehaviour
     }
     //what i'll probably do is have multiple tags that will dictate what script to call on, that way we might be able to keep this script as the 'universal' ai script, with other minor ai scripts to go with it
     // Initial attack brodcast, dictates where the enemy will hit next on round start
-     IEnumerator AttackBroadcast() 
+    IEnumerator AttackBroadcast()
     {
         isWhiling = true;
         while (attackPoint != currentPlayerLoc)
         {
-            
+
             attackPoint++;
-            
+
         }
         yield return null;
         isWhiling = false;
-        
+
+    }
+    public void raycastTest()
+    {
+       
     }
      public void EnemyMechanics()
     {
