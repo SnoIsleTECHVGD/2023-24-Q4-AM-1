@@ -1096,11 +1096,8 @@ MonoBehaviour:
   BattlePoints: []
   cardTransform: []
   playerLoc: 0
-  Enemy: {fileID: 0}
-  player: {fileID: 727373579}
   currentDeck: []
   deckSave: []
-  currentPlayerLoc: {fileID: 0}
   activeHand: []
   RandomValue: 0
   nextDraw: {fileID: 0}

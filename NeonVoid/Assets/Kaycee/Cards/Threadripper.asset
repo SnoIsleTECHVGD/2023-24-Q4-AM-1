@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52fbe756e1ff56479fd2bfbc97e22f9, type: 3}
   m_Name: Threadripper
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Threadripper
   power: 0
   attack: 0
-  skill: 0
+  skill: 1
   movement: 0
-  specialCase: 0
+  specialCase: 1
   fleeting: 0
   inflictStatus: 0
   Common: 0
-  Rare: 0
+  Rare: 1
   Legendary: 0
   overHeat: 0
   electrified: 0
   block: 0
   overCharge: 0
+  Vulnerable: 0
   damage: 0
   moveAmount: 0
-  cost: 0
+  cost: 1
   inflictNum: 0

@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void PlayerEffects()
     {
-
+        
     }
     public void ResetTurn()
     {

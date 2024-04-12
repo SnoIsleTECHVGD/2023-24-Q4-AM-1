@@ -17,7 +17,7 @@ MonoBehaviour:
   attack: 0
   skill: 1
   movement: 1
-  specialCase: 0
+  specialCase: 1
   fleeting: 0
   inflictStatus: 0
   Common: 0
