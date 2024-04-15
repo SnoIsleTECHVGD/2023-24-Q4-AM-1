@@ -2,36 +2,40 @@ using UnityEngine;
 
 public class PlayerBattleMovement : MonoBehaviour
 {
-    public Transform player; // Player's transform
-    public Transform[] points; // Store point transforms
+    public Transform player; 
+    public Transform[] points;
 
     private Vector3 targetPosition = Vector3.zero; // Target position
     private float moveSpeed = 5f; // Movement speed
-    private bool isMoving = false; // Flag to check if the player is currently moving
+    private bool isMoving = false; // Player moving?
 
     void Update()
     {
-        // Check if not currently moving and mouse click detected
-        if (!isMoving && Input.GetMouseButtonDown(0))
-        {
-            // Get the mouse position in world space
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        // Get input axes
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                Vector3 clickPosition = hit.point;
-                MoveToClosestPoint(clickPosition);
-            }
+        // Movement direction vector
+        Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        // Limit diagonal speed, retur sqr value
+        if (moveDirection.sqrMagnitude > 1f)
+        {
+            moveDirection.Normalize();
         }
 
-        // Move player towards target position if there is a target set
+        // Move to closest point
+        if (moveDirection != Vector3.zero)
+        {
+            MoveToClosestPointInDirection(moveDirection);
+        }
+
         MovePlayer();
     }
 
-    void MoveToClosestPoint(Vector3 position)
+    void MoveToClosestPointInDirection(Vector3 direction)
     {
-        int closestPointIndex = FindClosestPointIndex(position);
+        int closestPointIndex = FindClosestPointInDirection(direction);
         targetPosition = points[closestPointIndex].position;
         isMoving = true; // Set moving to true
     }
@@ -42,27 +46,32 @@ public class PlayerBattleMovement : MonoBehaviour
         {
             player.position = Vector3.MoveTowards(player.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // Check if player has reached the target position
+            // Check if player has reached the point
             if (Vector3.Distance(player.position, targetPosition) < 0.1f)
             {
-                isMoving = false; // Reset moving once reached the target
+                // isMoving = false; // Reset moving once at point
             }
         }
     }
 
-    int FindClosestPointIndex(Vector3 position)
+    int FindClosestPointInDirection(Vector3 direction)
     {
         int closestIndex = 0;
         float closestDistance = Mathf.Infinity;
 
-        // Find closest point to the clicked position
+        // Find closest point in given direction
         for (int i = 0; i < points.Length; i++)
         {
-            float distance = Vector3.Distance(position, points[i].position);
-            if (distance < closestDistance)
+            Vector3 pointDirection = (points[i].position - player.position).normalized;
+            float dotProduct = Vector3.Dot(direction, pointDirection);
+            if (dotProduct > 0f)
             {
-                closestDistance = distance;
-                closestIndex = i;
+                float distance = Vector3.Distance(player.position, points[i].position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestIndex = i;
+                }
             }
         }
 
