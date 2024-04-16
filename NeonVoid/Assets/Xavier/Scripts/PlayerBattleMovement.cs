@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerBattleMovement : MonoBehaviour
 {
-    public Transform player; 
+    public Transform player;
     public Transform[] points;
 
     private Vector3 targetPosition = Vector3.zero; // Target position
     private float moveSpeed = 5f; // Movement speed
     private bool isMoving = false; // Player moving?
+    private float rotationSpeed = 90f; // Degrees per second
 
     void Update()
     {
@@ -15,19 +16,17 @@ public class PlayerBattleMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        // Movement direction vector
-        Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+        // Rotate the player
+        RotatePlayer(horizontal);
 
-        // Limit diagonal speed, retur sqr value
-        if (moveDirection.sqrMagnitude > 1f)
+        // Move to closest point if the point in front is detected
+        if (vertical > 0f)
         {
-            moveDirection.Normalize();
+            MoveToClosestPointInDirection(player.forward);
         }
-
-        // Move to closest point
-        if (moveDirection != Vector3.zero)
+        else
         {
-            MoveToClosestPointInDirection(moveDirection);
+            isMoving = false;
         }
 
         MovePlayer();
@@ -36,8 +35,16 @@ public class PlayerBattleMovement : MonoBehaviour
     void MoveToClosestPointInDirection(Vector3 direction)
     {
         int closestPointIndex = FindClosestPointInDirection(direction);
-        targetPosition = points[closestPointIndex].position;
-        isMoving = true; // Set moving to true
+        Vector3 closestPointPosition = points[closestPointIndex].position;
+        if (CanMoveToPoint(closestPointPosition))
+        {
+            targetPosition = closestPointPosition;
+            isMoving = true; // Set moving to true
+        }
+        else
+        {
+            isMoving = false; // Can't move to the point, so stop moving
+        }
     }
 
     void MovePlayer()
@@ -76,5 +83,25 @@ public class PlayerBattleMovement : MonoBehaviour
         }
 
         return closestIndex;
+    }
+
+    bool CanMoveToPoint(Vector3 targetPosition)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(player.position, (targetPosition - player.position).normalized, out hit, Vector3.Distance(player.position, targetPosition)))
+        {
+            // If the ray hits something, return false
+            return false;
+        }
+        return true; // No obstacles, so the point is walkable
+    }
+
+    void RotatePlayer(float horizontal)
+    {
+        if (horizontal != 0f)
+        {
+            // Rotate the player based on the horizontal input
+            player.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime, Space.Self);
+        }
     }
 }
