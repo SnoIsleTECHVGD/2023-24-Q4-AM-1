@@ -67,7 +67,7 @@ public class BattleCode : MonoBehaviour
     #region round controller
     public void RoundStart()
     {
-        DrawHand();
+        //DrawHand();
         
     }
  
@@ -97,7 +97,7 @@ public class BattleCode : MonoBehaviour
     #region card and deck functions
     public void ShuffleCards()
     {
-        discardPile.Shuffle
+        //discardPile.Shuffle();
     }
 
     #endregion

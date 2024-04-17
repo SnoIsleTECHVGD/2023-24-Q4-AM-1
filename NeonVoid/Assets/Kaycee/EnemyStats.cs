@@ -78,72 +78,7 @@ public class EnemyStats : MonoBehaviour
     }
      public void EnemyMechanics()
     {
-        if (Boss == true)
-        {
-            randomizedAtkVal = Random.Range(0, moveLimit);
-            if (moveLimit == 0 && moveLimit != moveStorage)
-            {
-                point1 = attackPoint;
-                point2 = attackPoint - 2;
-                point3 = attackPoint + 2;
-                moveLimit = moveStorage;
-                point4 = 7;
-                point5 = 7;
-                point6 = 7;
-
-            }
-            if (moveLimit == 1 && moveLimit != moveStorage)
-            {
-                point1 = attackPoint;
-                point2 = attackPoint - 1;
-                point4 = 7;
-                point5 = 7;
-                point6 = 7;
-                point3 = attackPoint + 1;
-                moveLimit = moveStorage;
-            }
-            if (moveLimit == 2 && moveLimit != moveStorage)
-            {
-                point1 = 7;
-                point2 = attackPoint - 1;
-                point3 = attackPoint - 2;
-                point4 = attackPoint - 3;
-                point5 = attackPoint - 4;
-                point6 = attackPoint - 5;
-                moveLimit = moveStorage;
-            }
-            if (moveLimit == 3 && moveLimit != moveStorage)
-            {
-
-            }
-            if (health >= health * 0.5f && utilityBool!= true)
-            {
-                point1 = 7;
-                point2 = 7;
-                point3 = 7;
-                point4 = 7;
-                point5 = 7;
-                point6 = 7;
-                utilityBool = true;
-                healthStorage = health;
-            }
-            if (utilityBool == true)
-            {
-                point1 = 1;
-                point2 = 2;
-                point3 = 3;
-                point4 = 4;
-                point5 = 5;
-                point6 = 6;
-               
-                
-            }
-        else
-        {
-            randomizedAtkVal = Random.Range(0, moveLimit);
-            EnemyMechanics();
-        }
-        }
+        
     }
     public void EnemyEffects()
     {
