@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Ty/Scenes/TheBattleTest.unity
+    guid: 9c29b368542de174bb974282ccaaf619
+  - enabled: 1
     path: Assets/Ty/Scenes/GrassLevel.unity
     guid: f8007a76f8d8d6247a87a5051d2ab5fe
   - enabled: 1
