@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public GameObject enemyRef, playerRef;
+    PlayerStats player;
     public string enemyName;
     public bool Enemy01, Boss;
     public string[] barkText;
@@ -15,8 +16,7 @@ public class EnemyStats : MonoBehaviour
     public int health, block, overHeat, electrified, electrifiedEnemy, overHeatEnemy, healthStorage, staggerHealth;// health and various stats
     public int point1, point2, point3, point4, point5, point6; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
-    public string inflictionNameSpace;
-    private int randomizedAtkVal, moveLimit, moveStorage;
+    //public List<EnemyAction>
 
     public bool isWhiling;
     void Start()
@@ -28,18 +28,9 @@ public class EnemyStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (infliction == true)
-        {
-            if (inflictionNameSpace == "overheat")
-            {
-                playerRef.GetComponent<PlayerStats>().overHeatStorage = overHeat;
-            }
-            if (inflictionNameSpace == "electrified")
-            {
-                playerRef.GetComponent<PlayerStats>().electrifiedStorage = electrified;
-            }
+      
 
-        }
+        
         if (utilityBool == true)
         {
             if (Boss == true)
@@ -76,6 +67,14 @@ public class EnemyStats : MonoBehaviour
     public void raycastTest()
     {
        
+    }
+    private IEnumerator AttackPlayer()
+    {
+        //place what triggers the atk animation to play here!
+        yield return new WaitForSeconds(0.5f);
+        player.TakeDamage();
+        yield return new WaitForSeconds(0.5f);
+        
     }
      public void EnemyMechanics()
     {
