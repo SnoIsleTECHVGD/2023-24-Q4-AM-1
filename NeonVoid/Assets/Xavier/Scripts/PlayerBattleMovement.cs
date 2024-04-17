@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBattleMovement : MonoBehaviour
 {
     public Transform player;
     public Transform[] points;
+
+    public Button Card;
+
 
     private Vector3 targetPosition = Vector3.zero; // Target position
     private float moveSpeed = 5f; // Movement speed
@@ -17,22 +21,22 @@ public class PlayerBattleMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         // Rotate the player
-        RotatePlayer(horizontal);
+        //RotatePlayer(horizontal);
 
         // Move to closest point if the point in front is detected
-        if (vertical > 0f)
-        {
-            MoveToClosestPointInDirection(player.forward);
-        }
-        else
-        {
-            isMoving = false;
-        }
+        //if (Input.GetButtonDown("Card"))
+        //{
+        //    MoveToClosestPointInDirection(player.forward);
+        //}
+        //else
+        //{
+        //    isMoving = false;
+        //}
 
         MovePlayer();
     }
 
-    void MoveToClosestPointInDirection(Vector3 direction)
+    public void MoveToClosestPointInDirection(Vector3 direction)
     {
         int closestPointIndex = FindClosestPointInDirection(direction);
         Vector3 closestPointPosition = points[closestPointIndex].position;
