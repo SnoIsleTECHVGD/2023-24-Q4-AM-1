@@ -7,16 +7,19 @@ public class EnemyTurn : MonoBehaviour
 
     public GameObject Raycastobject;
     public Transform[] ToPoints;
+    public Vector3[] ToPointPosition;
     public float MaxDistance;
     public int Loading;
- public void TriggerRaycast()
+    
+    public void TriggerRaycast()
     {
         Loading = 0;
         foreach(Transform T in ToPoints)
         {
-
+            Vector3 fwd = Raycastobject.transform.TransformDirection(ToPointPosition[Loading]);
             Loading++;
-            // if(Physics.Raycast(RaycastObject))
+            Physics.Raycast(Raycastobject.transform.position, fwd);
+            
         }
         
     }
@@ -31,6 +34,7 @@ public class EnemyTurn : MonoBehaviour
 
     private void Update()
     {
+        
         
     }
 }

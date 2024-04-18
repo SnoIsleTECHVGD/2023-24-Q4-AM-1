@@ -74,6 +74,7 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         player.TakeDamage();
         yield return new WaitForSeconds(0.5f);
+
         
     }
      public void EnemyMechanics()
