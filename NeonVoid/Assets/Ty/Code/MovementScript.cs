@@ -63,14 +63,8 @@ public class MovementScript: MonoBehaviour
     {
         Gizmos.color = Color.yellow;
 
-        if (grounded)
-        {
-            Gizmos.DrawWireCube(gameObject.transform.position, transform.forward * Hit.distance, transform.localScale);
-        }
-        else
-        {
-            Gizmos.DrawWireCube(transform.position + transform.forward, transform.localScale);
-        }
+
+        Gizmos.DrawWireCube(transform.position + transform.forward, transform.localScale);
     }
 
     private void MyInput()
