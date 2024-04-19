@@ -35,6 +35,7 @@ public class EnemyTurn : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Player))
             {
                 Debug.Log("Player Found");
+                Enemy.LookAt(ToPointPosition[Loading]);
             }
             else
             {
@@ -48,7 +49,7 @@ public class EnemyTurn : MonoBehaviour
 
         Vector3 direction = Enemy.transform.TransformDirection(fwd) * 5;
 
-        Gizmos.DrawRay(Raycastobject.transform.position, fwd);
+        Gizmos.DrawRay(Enemy.position, ToPointPosition[Loading] - Enemy.position);
     }
    
     private void Update()
