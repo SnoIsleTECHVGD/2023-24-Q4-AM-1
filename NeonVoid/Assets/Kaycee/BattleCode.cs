@@ -64,10 +64,19 @@ public class BattleCode : MonoBehaviour
         }
 
     }
+    public void BeginCombat()
+    {
+        drawPile.Clear(); //incase data is left over for whatever reason
+        
+        ShuffleCards();
+    }
     #region round controller
     public void RoundStart()
     {
-        //DrawHand();
+        if(drawPile.Count == 0)
+        {
+            ShuffleCards();
+        }
         
     }
  
@@ -98,6 +107,8 @@ public class BattleCode : MonoBehaviour
     public void ShuffleCards()
     {
         discardPile.Shuffle();
+        drawPile = discardPile;
+        discardPile.Clear();
     }
 
     #endregion
