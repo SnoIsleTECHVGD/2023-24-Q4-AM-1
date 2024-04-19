@@ -97,7 +97,7 @@ public class BattleCode : MonoBehaviour
     #region card and deck functions
     public void ShuffleCards()
     {
-        //discardPile.Shuffle();
+        discardPile.Shuffle();
     }
 
     #endregion
