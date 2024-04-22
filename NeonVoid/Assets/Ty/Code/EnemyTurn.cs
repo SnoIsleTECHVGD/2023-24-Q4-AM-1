@@ -6,56 +6,62 @@ public class EnemyTurn : MonoBehaviour
 {
 
     public GameObject Raycastobject;
-    public Transform[] ToPoints;
-    public Vector3[] ToPointPosition;
+
     public float MaxDistance;
     public int Loading;
-    public Transform Enemy;
-    public LayerMask Player;
+    public GameObject Enemy;
+    public GameObject Player;
     public RaycastHit hit;
     public Ray ray;
+    public bool isEnemyTurn;
+    public int randNum;
+    public GameObject[] LocationPoints;
+    public GameObject CurrentLocation;
 
     Vector3 fwd;
 
     private void Start()
     {
-        fwd = Raycastobject.transform.TransformDirection(ToPointPosition[Loading]);
-        TriggerRaycast();
+        
     }
 
-    public void TriggerRaycast()
-    {
-        Loading = 0;
-        foreach(Transform T in ToPoints)
-        {
-            ray = new Ray(Enemy.position, ToPointPosition[Loading] - Enemy.position);
 
-            Debug.Log(Loading);
-            Physics.Raycast(ray);
-            if (Physics.Raycast(ray, out hit, Player))
-            {
-                Debug.Log("Player Found");
-                Enemy.LookAt(ToPointPosition[Loading]);
-            }
-            else
-            {
-                Loading++;
-            }
-        }
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-
-        Vector3 direction = Enemy.transform.TransformDirection(fwd) * 5;
-
-        Gizmos.DrawRay(Enemy.position, ToPointPosition[Loading] - Enemy.position);
-    }
-   
     private void Update()
     {
-
+        if(isEnemyTurn == true)
+        {
+            SelectAttack();
+        }
         
+    }
+
+    public void SelectAttack()
+    {
+        randNum = Random.Range(0, 4);
+        if(randNum == 0)
+        {
+            Debug.Log("ATTACK1");
+            Attack1();
+        }
+        if (randNum == 1)
+        {
+            Debug.Log("ATTACK2");
+        }
+        if (randNum == 2)
+        {
+            Debug.Log("ATTACK3");
+        }
+        if (randNum == 3)
+        {
+            Debug.Log("How's the weather?");
+        }
+        isEnemyTurn = false;
+    }
+
+
+    public void Attack1()
+    {
+        CurrentLocation.GetComponent<DetectionScript>().isAttacking = true;
     }
 }
 
