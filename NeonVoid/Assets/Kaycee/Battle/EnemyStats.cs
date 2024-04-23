@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -38,13 +39,7 @@ public class EnemyStats : MonoBehaviour
                 staggerHealth = healthStorage - health;
                 if (staggerHealth >= 20)
                 {
-                    point1 = 7;
-                    point2 = 7;
-                    point3 = 7;
-                    point4 = 7;
-                    point5 = 7;
-                    point6 = 7;
-                    utilityBool = false;
+                   
                 }
             }
         }
@@ -70,11 +65,11 @@ public class EnemyStats : MonoBehaviour
     }
     private IEnumerator AttackPlayer()
     {
-        //place what triggers the atk animation to play here!
+        //place holder
         yield return new WaitForSeconds(0.5f);
         player.TakeDamage();
         yield return new WaitForSeconds(0.5f);
-
+ 
         
     }
      public void EnemyMechanics()
@@ -85,11 +80,20 @@ public class EnemyStats : MonoBehaviour
     {
         if(overHeatEnemy == 5)
         {
-            // do over heat function (end turn)
+            // do over heat function (end turn), may remain unimplemented?
         }
         if (electrified > 0)
         {
            health = health - electrifiedEnemy;
         }
     }
+    public void TakeDMG(int amount)
+    {
+        health -= amount;
+        if(health <= 0)
+        {
+            //combat won
+        }
+    }
+    
 }

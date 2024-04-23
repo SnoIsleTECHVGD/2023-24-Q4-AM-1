@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health, sunnyD, shield, overHeat, electrified, overHeatStorage, electrifiedStorage, sunnyDMax, overCharge;
+    public int health, sunnyD, shield, overHeat, electrified, overHeatStorage, electrifiedStorage, sunnyDMax, overCharge, moveAmount;
     public string[] barkTextPlayer;
     
     // Start is called before the first frame update
     void Start()
     {
         
-    }
+    } 
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void MovePlayer()
+    {
+
     }
     public void PlayerEffects()
     {

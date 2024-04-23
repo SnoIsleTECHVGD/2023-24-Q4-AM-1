@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EmoChomp
   m_EditorClassIdentifier: 
   cardName: Emo Chomp
+  cardDescription: 
   power: 0
   attack: 1
   skill: 0
@@ -23,6 +24,7 @@ MonoBehaviour:
   Common: 0
   Rare: 1
   Legendary: 0
+  CardIcon: {fileID: 21300000, guid: 5915a18617a7f684d8b23e1cd0ea888e, type: 3}
   overHeat: 0
   electrified: 0
   block: 0

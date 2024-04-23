@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CardEffects : MonoBehaviour
+{
+    public CardCode cardCode;
+    BattleCode battleCode;
+    public PlayerStats playerStats;
+    public EnemyStats enemyStats;
+    
+    public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats)
+    {
+        switch (cardCode.cardName)
+        {
+            case "Denim Dodge":
+                MovePlayer();
+                break;
+            case "Emo Chomp":
+                DamageEnemy();
+                break;
+            case "Galaxy Shield":
+                GiveBuff();
+                break;
+            case "Gangam Style":
+                break;
+            case "Glitch":
+                MovePlayer();
+                break;
+            case "Learning Algorithm":
+                GiveBuff();
+                break;
+            case "Slap":
+                DamageEnemy();
+                break;
+            case "Stun Dipper":
+                DamageEnemy();
+                MovePlayer();
+                break;
+            case "Threadripper":
+                SpecialCase();
+                break;
+                    case "Thread":
+                DamageEnemy();
+                break;
+                
+
+                
+
+
+        }
+    }
+    public void DamageEnemy()
+    {
+        int DmgEnemy = cardCode.damage;
+        enemyStats.TakeDMG(DmgEnemy);
+    }
+    public void MovePlayer()
+    {
+        playerStats.MovePlayer();
+    }
+    public void GiveBuff()
+    {
+        playerStats.PlayerEffects();
+    }
+    public void SpecialCase()
+    {
+        //blank for now, neccesary for threadripper, just gonna take me a bit to acctually get to this yk done
+    }
+  
+}

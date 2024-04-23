@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GalaxyShield
   m_EditorClassIdentifier: 
   cardName: Galaxy Shield
+  cardDescription: 
   power: 0
   attack: 0
   skill: 1
@@ -23,6 +24,7 @@ MonoBehaviour:
   Common: 0
   Rare: 1
   Legendary: 0
+  CardIcon: {fileID: 21300000, guid: 326ecdc2be45f7e44838c2b3be43cf48, type: 3}
   overHeat: 0
   electrified: 0
   block: 1
