@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 108
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,18 +129,97 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: IMG_0336_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 482
+        width: 617
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cd90d185547e6429aa29dff3e1e72d
+      internalID: 1450213357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_0336_0
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 65
+        width: 537
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5b2cc81e155a84997f96c3c1368f6b
+      internalID: 1713611194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 11962a7e1b2169f4fa3877d5754748d8
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IMG_0336_0: 1713611194
+      IMG_0336_31: 198349573
+      IMG_0336_3: -280575085
+      IMG_0336_5: -1642648923
+      IMG_0336_6: 1196057138
+      IMG_0336_9: -1034434442
+      IMG_0336_16: -260763588
+      IMG_0336_28: -615677459
+      IMG_0336_22: 370280299
+      IMG_0336_34: 1436821164
+      IMG_0336_2: -139447975
+      IMG_0336_14: 1098621182
+      IMG_0336_13: 1828783796
+      IMG_0336_27: 1309543819
+      IMG_0336_24: -1661110714
+      IMG_0336_8: -1913855146
+      IMG_0336_11: 1453948606
+      IMG_0336_10: -1573069539
+      IMG_0336_4: 1929748046
+      IMG_0336_30: 1859235764
+      IMG_0336_36: -719124967
+      IMG_0336_12: 54166335
+      IMG_0336_25: -1480960947
+      IMG_0336_15: -303712765
+      IMG_0336_19: 529821281
+      IMG_0336_32: -1259456004
+      IMG_0336_23: -1253115811
+      IMG_0336_18: 188460344
+      IMG_0336_21: -248812786
+      IMG_0336_33: 180507522
+      IMG_0336_1: 1450213357
+      IMG_0336_7: -2079186859
+      IMG_0336_29: -1546295335
+      IMG_0336_20: 1235988270
+      IMG_0336_17: -1795181438
+      IMG_0336_26: -969696245
+      IMG_0336_35: 831740286
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
