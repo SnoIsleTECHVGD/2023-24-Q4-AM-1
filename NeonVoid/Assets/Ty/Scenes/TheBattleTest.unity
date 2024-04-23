@@ -259,7 +259,7 @@ RectTransform:
   - {fileID: 1383023742}
   - {fileID: 373386081}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -527,9 +527,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 110911915}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 110911918}
@@ -575,7 +577,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218290183
 GameObject:
@@ -838,9 +840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 233234565}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 233234568}
@@ -873,7 +877,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373386080
 GameObject:
@@ -1677,9 +1681,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 666208413}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 666208416}
@@ -1811,7 +1817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &725256270
 MonoBehaviour:
@@ -1828,12 +1834,23 @@ MonoBehaviour:
   Raycastobject: {fileID: 713734674}
   MaxDistance: 100
   Loading: 0
-  Enemy: {fileID: 713734675}
-  Player: {fileID: 0}
-  isEnemyTurn: 0
+  Enemy: {fileID: 713734674}
+  Player: {fileID: 2018352506}
   randNum: 0
-  LocationPoints: []
   CurrentLocation: {fileID: 0}
+  isEnemyTurn: 0
+  hasTalked: 0
+  setAttack: 0
+  isAttack1: 0
+  A1Damage: 1
+  isAttack2: 0
+  isAttack3: 0
+  BottomPoint: {fileID: 1732882456}
+  LowerLeftPoint: {fileID: 948546273}
+  UpperLeftPoint: {fileID: 110911915}
+  TopPoint: {fileID: 233234565}
+  UpperRightPoint: {fileID: 754965852}
+  LowerRightPoint: {fileID: 666208413}
 --- !u!1 &729277118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,9 +2015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 754965852}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 754965855}
@@ -2082,8 +2101,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881288183}
-  m_LocalRotation: {x: 0.24832633, y: -0.6616438, z: 0.24795656, w: 0.6626305}
-  m_LocalPosition: {x: 6.71, y: 7.351, z: -0.01}
+  m_LocalRotation: {x: 0.13362575, y: -0.70009214, z: 0.13594711, w: 0.6881377}
+  m_LocalPosition: {x: 9.87, y: 5.484, z: 0.17000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2222,7 +2241,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948546273
 GameObject:
@@ -2351,9 +2370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 948546273}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 948546276}
@@ -2390,7 +2411,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 2
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 713734675}
   m_Follow: {fileID: 2018352507}
@@ -2419,14 +2440,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040169076}
-  m_LocalRotation: {x: 0.24832633, y: -0.6616438, z: 0.24795656, w: 0.6626305}
-  m_LocalPosition: {x: 6.71, y: 7.351, z: -0.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.13362575, y: -0.70009214, z: 0.13594711, w: 0.6881377}
+  m_LocalPosition: {x: 13.26, y: 7.8, z: 0.16000003}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1691319696}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 2018352507}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135608669
 GameObject:
@@ -3443,7 +3464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 3.71, y: 4.08, z: -0.019}
+  m_FollowOffset: {x: 6.63, y: 3.9, z: 0.080000006}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3656,9 +3677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874ae669e34428b44ae1867b3a5ee0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 1732882456}
   EnemySystem: {fileID: 725256268}
   isAttacking: 0
+  isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
   MeshRenderer: {fileID: 1732882459}
@@ -3675,6 +3698,7 @@ GameObject:
   - component: {fileID: 2018352510}
   - component: {fileID: 2018352509}
   - component: {fileID: 2018352508}
+  - component: {fileID: 2018352513}
   - component: {fileID: 2018352512}
   m_Layer: 0
   m_Name: Player
@@ -3691,10 +3715,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018352506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 3.271, z: 0.009}
+  m_LocalPosition: {x: 3.24, y: 1.584, z: 0.09}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1040169078}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3718,6 +3743,7 @@ MonoBehaviour:
   - {fileID: 948546274}
   - {fileID: 666208414}
   - {fileID: 1732882457}
+  enemy: {fileID: 0}
   Card: {fileID: 0}
 --- !u!136 &2018352509
 CapsuleCollider:
@@ -3799,6 +3825,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2018352513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018352506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9026700934062a743a891349a296af3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beingAttacked: 0
+  Hp: 10
 --- !u!1 &2059721316
 GameObject:
   m_ObjectHideFlags: 0

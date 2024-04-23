@@ -11,12 +11,28 @@ public class EnemyTurn : MonoBehaviour
     public int Loading;
     public GameObject Enemy;
     public GameObject Player;
-    public RaycastHit hit;
-    public Ray ray;
-    public bool isEnemyTurn;
+
+
     public int randNum;
-    public GameObject[] LocationPoints;
     public GameObject CurrentLocation;
+
+    public bool isEnemyTurn;
+    public bool hasTalked;
+    public bool setAttack;
+
+    //Player Attack Attributes
+    public bool isAttack1;
+    public int A1Damage = 1;
+
+    public bool isAttack2;
+    public bool isAttack3;
+
+    public GameObject BottomPoint;
+    public GameObject LowerLeftPoint;
+    public GameObject UpperLeftPoint;
+    public GameObject TopPoint;
+    public GameObject UpperRightPoint;
+    public GameObject LowerRightPoint;
 
     Vector3 fwd;
 
@@ -28,40 +44,118 @@ public class EnemyTurn : MonoBehaviour
 
     private void Update()
     {
-        if(isEnemyTurn == true)
+        if(isEnemyTurn == true && setAttack == false)
         {
             SelectAttack();
         }
-        
+        else if(isEnemyTurn == true && setAttack == true)
+        {
+            AttackEffect();
+        }
+    }
+
+    public void AttackEffect()
+    {
+        if(isAttack1 == true)
+        {
+            if(Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            {
+                Player.GetComponent<DemoPlayerAttributes>().Hp -= A1Damage;
+                Debug.Log("HURT!");
+            }
+
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            TopPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            isAttack1 = false;
+            isEnemyTurn = false;
+            setAttack = false;
+        }
     }
 
     public void SelectAttack()
     {
-        randNum = Random.Range(0, 4);
-        if(randNum == 0)
-        {
-            Debug.Log("ATTACK1");
-            Attack1();
-        }
-        if (randNum == 1)
-        {
-            Debug.Log("ATTACK2");
-        }
-        if (randNum == 2)
-        {
-            Debug.Log("ATTACK3");
-        }
-        if (randNum == 3)
-        {
-            Debug.Log("How's the weather?");
-        }
+        Attack1();
+        //randNum = Random.Range(0, 4);
+        //if(randNum == 0)
+        //{
+        //    Debug.Log("ATTACK1");
+        //    Attack1();
+        //}
+        //if (randNum == 1)
+        //{
+        //    Debug.Log("ATTACK2");
+        //    Attack2();
+        //}
+        //if (randNum == 2)
+        //{
+        //    Debug.Log("ATTACK3");
+        //}
+        //if (randNum == 3)
+        //{
+        //    Debug.Log("How's the weather?");
+        //}
         isEnemyTurn = false;
     }
 
 
     public void Attack1()
     {
+        setAttack = true;
+        isAttack1 = true;
+        if(BottomPoint == CurrentLocation)
+        {
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("Bottom");
+        }
+        if (LowerLeftPoint == CurrentLocation)
+        {
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("LowerLeft");
+        }
+        if(UpperLeftPoint == CurrentLocation)
+        {
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            TopPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("UpperLeft");
+        }
+        if (TopPoint == CurrentLocation)
+        {
+            TopPoint.GetComponent<DetectionScript>().isAttacking = true;
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("Top");
+        }
+        if (UpperRightPoint == CurrentLocation)
+        {
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            TopPoint.GetComponent<DetectionScript>().isAttacking = true;
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("UpperRight");
+        }
+        if (LowerRightPoint == CurrentLocation)
+        {
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
+            Debug.Log("LowerRight");
+        }
+
+
+    }
+
+    public void Attack2()
+    {
         CurrentLocation.GetComponent<DetectionScript>().isAttacking = true;
+        setAttack = true;
     }
 }
 

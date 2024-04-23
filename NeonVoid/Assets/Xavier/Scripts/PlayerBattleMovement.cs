@@ -5,6 +5,7 @@ public class PlayerBattleMovement : MonoBehaviour
 {
     public Transform player;
     public Transform[] points;
+    public Transform enemy;
 
     public Button Card;
 
@@ -34,6 +35,7 @@ public class PlayerBattleMovement : MonoBehaviour
         //}
 
         MovePlayer();
+        player.LookAt(enemy);
     }
 
     public void MoveToClosestPointInDirection(Vector3 direction)
