@@ -13,8 +13,8 @@ public class CardUI : MonoBehaviour
     public void LoadCard(CardCode _cards)
     {
         
-            cards = _cards;
-            gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        cards = _cards;
+        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         cardDescription.text = cards.cardDescription;
         CardImage.sprite = cards.CardIcon;
   }

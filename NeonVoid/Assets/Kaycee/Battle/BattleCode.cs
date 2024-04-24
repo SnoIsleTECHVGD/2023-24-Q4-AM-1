@@ -20,6 +20,7 @@ public class BattleCode : MonoBehaviour
     public GameObject nextDraw, addToHand; // for when cards influnce draw order, and we cant just randomize it out 
     public int cardLimit, drawCard , deckSize; // card and deck ints
     public List <GameObject> discard;
+    public List<CardUI> InstantiatedCards = new List<CardUI>();
     public int energy, maxEnergy;
 
 
@@ -37,26 +38,21 @@ public class BattleCode : MonoBehaviour
         {
             player.GetComponent<PlayerStats>().PlayerEffects();
             Enemy.GetComponent<EnemyStats>().EnemyEffects();
-            RoundStart();
+            
         }
         if (Enemy.GetComponent<EnemyStats>().health >= 0)
         {
-            ExitCombat();
+            
         }
         if (player.GetComponent<PlayerStats>().health == 0)
         {
-            //skill issue
-            GameOver();
+            
         }
-        if (turnReady == true)
-        {
-
-           turnReady = false; 
-        }
+        
 
         if (turnActive == false)
         {
-            RoundEnd();
+           
         }
 
     }
@@ -67,31 +63,17 @@ public class BattleCode : MonoBehaviour
         ShuffleCards();
     }
     #region round controller
-    public void RoundStart()
+    public void NewRound()
     {
         if(drawPile.Count == 0)
         {
             ShuffleCards();
         }
         
+        
     }
  
-    public void RoundEnd()
-    {
-        turnActive = false;
-        
-        //trigger enemy attack
-        
-
-    }
-    public void ExitCombat()
-    {
-        // do exit combat function
-    }
-    public void GameOver()
-    {
-        // end game
-    }
+    
     #endregion
 
     #region card and deck functions
@@ -100,6 +82,12 @@ public class BattleCode : MonoBehaviour
         discardPile.Shuffle();
         drawPile = discardPile;
         discardPile.Clear();
+    }
+    public void DisplayCardInHand(CardCode card)
+    {
+        CardUI cardUI = InstantiatedCards[cardsInHand.Count - 1];
+        cardUI.LoadCard(card);
+        cardUI.gameObject.SetActive(true);
     }
     public void DrawCards(int DrawAmount)
     {
@@ -113,6 +101,7 @@ public class BattleCode : MonoBehaviour
             cardsInHand.Add(drawPile[0]);
             drawPile.Remove(drawPile[0]);
             DrawTotal++;
+            DisplayCardInHand(drawPile[0]);
         }
 
         
