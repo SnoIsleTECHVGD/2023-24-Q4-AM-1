@@ -25,7 +25,10 @@ public class EnemyTurn : MonoBehaviour
     public int A1Damage = 1;
 
     public bool isAttack2;
+    public int A2Damage = 3;
+
     public bool isAttack3;
+    public int A3Damage = 4;
 
     public GameObject BottomPoint;
     public GameObject LowerLeftPoint;
@@ -74,6 +77,42 @@ public class EnemyTurn : MonoBehaviour
             isEnemyTurn = false;
             setAttack = false;
         }
+        if (isAttack2 == true)
+        {
+            if (Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            {
+                Player.GetComponent<DemoPlayerAttributes>().Hp -= A2Damage;
+                Debug.Log("HURT!");
+            }
+
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            TopPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            isAttack2 = false;
+            isEnemyTurn = false;
+            setAttack = false;
+        }
+        if (isAttack3 == true)
+        {
+            if (Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            {
+                Player.GetComponent<DemoPlayerAttributes>().Hp -= A3Damage;
+                Debug.Log("HURT!");
+            }
+
+            BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = false;
+            TopPoint.GetComponent<DetectionScript>().isAttacking = false;
+            UpperRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            LowerRightPoint.GetComponent<DetectionScript>().isAttacking = false;
+            isAttack3 = false;
+            isEnemyTurn = false;
+            setAttack = false;
+        }
     }
 
     public void SelectAttack()
@@ -101,8 +140,13 @@ public class EnemyTurn : MonoBehaviour
         isEnemyTurn = false;
     }
 
-
     public void Attack1()
+    {
+        CurrentLocation.GetComponent<DetectionScript>().isAttacking = true;
+        setAttack = true;
+    }
+
+    public void Attack2()
     {
         setAttack = true;
         isAttack1 = true;
@@ -148,15 +192,19 @@ public class EnemyTurn : MonoBehaviour
             BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
             Debug.Log("LowerRight");
         }
-
-
     }
 
-    public void Attack2()
+    public void Attack3()
     {
-        CurrentLocation.GetComponent<DetectionScript>().isAttacking = true;
+        TopPoint.GetComponent<DetectionScript>().isAttacking = true;
+        UpperRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+        LowerRightPoint.GetComponent<DetectionScript>().isAttacking = true;
+        BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
+        LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
+        UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
         setAttack = true;
     }
+
 }
 
 
