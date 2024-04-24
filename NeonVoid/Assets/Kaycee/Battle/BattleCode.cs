@@ -8,8 +8,7 @@ public class BattleCode : MonoBehaviour
 {
     //code for battle, gonna focus on card first tho
     #region refrences and assets
-    public List<CardCode> deck; //depricated
-    public Transform[] BattlePoints;//depricated?
+    public bool turn;
     public Transform[] cardTransform;
     private GameObject Enemy; // enemy ref
     private GameObject player; // player ref
@@ -21,6 +20,7 @@ public class BattleCode : MonoBehaviour
     public GameObject nextDraw, addToHand; // for when cards influnce draw order, and we cant just randomize it out 
     public int cardLimit, drawCard , deckSize; // card and deck ints
     public List <GameObject> discard;
+    public int energy, maxEnergy;
 
 
     #endregion
@@ -63,7 +63,7 @@ public class BattleCode : MonoBehaviour
     public void BeginCombat()
     {
         drawPile.Clear(); //incase data is left over for whatever reason
-        
+        energy = maxEnergy;
         ShuffleCards();
     }
     #region round controller
@@ -100,6 +100,22 @@ public class BattleCode : MonoBehaviour
         discardPile.Shuffle();
         drawPile = discardPile;
         discardPile.Clear();
+    }
+    public void DrawCards(int DrawAmount)
+    {
+        int DrawTotal = 0;
+        while(DrawTotal < DrawAmount)
+        {
+            if(drawPile.Count < 1)
+            {
+                ShuffleCards();
+            }
+            cardsInHand.Add(drawPile[0]);
+            drawPile.Remove(drawPile[0]);
+            DrawTotal++;
+        }
+
+        
     }
 
     #endregion
