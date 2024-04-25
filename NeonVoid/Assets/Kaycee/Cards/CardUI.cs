@@ -10,6 +10,12 @@ public class CardUI : MonoBehaviour
     public CardCode cards;
     public TMP_Text cardDescription;
     public Image CardImage;
+    BattleCode battleCode;
+    public void SelectCard()
+    {
+        
+        battleCode.selectedCard = this;
+    }
     public void LoadCard(CardCode _cards)
     {
         
