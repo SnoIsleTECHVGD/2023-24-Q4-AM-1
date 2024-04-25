@@ -57,7 +57,7 @@ public class MovementScript: MonoBehaviour
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = 0.5f;
         }
     }
 
