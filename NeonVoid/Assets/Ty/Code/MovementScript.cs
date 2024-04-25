@@ -46,7 +46,7 @@ public class MovementScript: MonoBehaviour
     }
     private void Update()
     {
-        grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, transform.forward, out Hit, transform.rotation, MaxDistance);
+        grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, -transform.up, out Hit, transform.rotation, MaxDistance);
 
         MyInput();
 
@@ -57,7 +57,7 @@ public class MovementScript: MonoBehaviour
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = 0.5f;
         }
     }
 
