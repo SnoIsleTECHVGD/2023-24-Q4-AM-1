@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
 
+    public UnityEvent DialogueFinished;
+
     public Animator animator;
 
     private Queue<string> sentences;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,9 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+
+            DialogueFinished.Invoke();
+
             return;
         }
 
