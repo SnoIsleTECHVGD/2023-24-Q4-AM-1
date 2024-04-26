@@ -8,90 +8,90 @@ public class BattleCode : MonoBehaviour
 {
     //code for battle, gonna focus on card first tho
     #region refrences and assets
-    public List<CardCode> deck; //depricated
-    public Transform[] BattlePoints;//depricated?
+    public Turn turn;
+    public enum Turn { player, enemy };
     public Transform[] cardTransform;
-    private GameObject Enemy; // enemy ref
+    public EnemyStats enemyStats;
+    public PlayerStats playerStats;
+    public GameObject Enemy; // enemy ref
     private GameObject player; // player ref
     public List<CardCode> drawPile = new List<CardCode>();
     public List<CardCode> discardPile = new List<CardCode>();
-    public List <CardCode> cardsInHand = new List<CardCode>();
+    public List<CardCode> cardsInHand = new List<CardCode>();
     private bool turnActive, turnInactive, turnReady; //turn values
     public int RandomValue;// randomizes the order for when cards are drawn
     public GameObject nextDraw, addToHand; // for when cards influnce draw order, and we cant just randomize it out 
-    public int cardLimit, drawCard , deckSize; // card and deck ints
-    public List <GameObject> discard;
+    public int cardLimit, drawCard, deckSize; // card and deck ints
+    public List<GameObject> discard;
+    public List<CardUI> InstantiatedCards = new List<CardUI>();
+    public int energy, maxEnergy;
+    public CardUI selectedCard;
+    GameManager gameManager;
+    CardEffects cardEffects;
+    
+
 
 
     #endregion
-    // Start is called before the first frame update
-    void Start()
+    
+    public void PlayedCard(CardUI cardUI)
     {
-        
+        cardEffects.AvailableActions(cardUI.cards, playerStats, enemyStats);
+        energy -= cardUI.cards.cost;
+        selectedCard = null;
+        cardUI.gameObject.SetActive(false);
+        cardsInHand.Remove(cardUI.cards);
+        DiscardCard(cardUI.cards);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (turnActive == true)
-        {
-            player.GetComponent<PlayerStats>().PlayerEffects();
-            Enemy.GetComponent<EnemyStats>().EnemyEffects();
-            RoundStart();
-        }
-        if (Enemy.GetComponent<EnemyStats>().health >= 0)
-        {
-            ExitCombat();
-        }
-        if (player.GetComponent<PlayerStats>().health == 0)
-        {
-            //skill issue
-            GameOver();
-        }
-        if (turnReady == true)
-        {
-
-           turnReady = false; 
-        }
-
-        if (turnActive == false)
-        {
-            RoundEnd();
-        }
-
-    }
+    
     public void BeginCombat()
     {
-        drawPile.Clear(); //incase data is left over for whatever reason
-        
+        //trigger this first!
+        drawPile.Clear(); //incase data is left over for whatever reason 
+        energy = maxEnergy;
         ShuffleCards();
+        foreach (CardCode card in cardsInHand)
+        {
+            DiscardCard(card);
+        }
+        discardPile.AddRange(gameManager.playerDeck);
+        DrawCards(cardLimit);
+
     }
     #region round controller
-    public void RoundStart()
+    public void NewRound()
     {
+        if(turn == Turn.player)
+        {
+            foreach (CardCode card in cardsInHand)
+            {
+                DiscardCard(card);
+            }
+            turn = Turn.enemy;
+            StartCoroutine(EnemyTurn());
+        }
+        else
+        {
+            turn = Turn.player;
+            energy = maxEnergy;
+            DrawCards(cardLimit);
+           
+        }
         if(drawPile.Count == 0)
         {
             ShuffleCards();
         }
         
-    }
- 
-    public void RoundEnd()
-    {
-        turnActive = false;
         
-        //trigger enemy attack
-        
-
-    }
-    public void ExitCombat()
+    } 
+    private IEnumerator EnemyTurn()
     {
-        // do exit combat function
+        yield return new WaitForSeconds(1); //place holder for now, change to length of enemies turn or animation that way 
+        Enemy.GetComponent<EnemyTurn>().isEnemyTurn = true;
+        NewRound();
     }
-    public void GameOver()
-    {
-        // end game
-    }
+    
     #endregion
 
     #region card and deck functions
@@ -101,6 +101,33 @@ public class BattleCode : MonoBehaviour
         drawPile = discardPile;
         discardPile.Clear();
     }
+    public void DisplayCardInHand(CardCode card)
+    {
+        CardUI cardUI = InstantiatedCards[cardsInHand.Count - 1];
+        cardUI.LoadCard(card);
+        cardUI.gameObject.SetActive(true);
+    }
+    public void DrawCards(int DrawAmount)
+    {
+        int DrawTotal = 0;
+        while(DrawTotal < DrawAmount)
+        {
+            if(drawPile.Count < 1)
+            {
+                ShuffleCards();
+            }
+            cardsInHand.Add(drawPile[0]);
+            drawPile.Remove(drawPile[0]);
+            DrawTotal++;
+            DisplayCardInHand(drawPile[0]);
+        }
 
-    #endregion
-}
+        
+    }
+    public void DiscardCard(CardCode card)
+    {
+        discardPile.Add(card);
+         }
+
+        #endregion
+    }

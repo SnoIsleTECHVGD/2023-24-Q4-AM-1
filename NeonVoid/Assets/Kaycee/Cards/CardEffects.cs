@@ -9,7 +9,7 @@ public class CardEffects : MonoBehaviour
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
     
-    public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats)
+    public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats, EnemyStats _enemyStats)
     {
         switch (cardCode.cardName)
         {

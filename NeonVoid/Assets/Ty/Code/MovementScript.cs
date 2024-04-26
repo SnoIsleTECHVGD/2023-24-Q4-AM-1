@@ -13,6 +13,7 @@ public class MovementScript: MonoBehaviour
     float verticalInput;
 
     Vector3 moveDirection;
+    public Vector3 Offset;
 
     Rigidbody rb;
 
@@ -28,6 +29,7 @@ public class MovementScript: MonoBehaviour
     public float groundDrag;
 
     public float playerHeight;
+    public float MaxDistance;
     public LayerMask Water;
     public bool grounded;
 
@@ -44,18 +46,18 @@ public class MovementScript: MonoBehaviour
     }
     private void Update()
     {
-        grounded = Physics.BoxCast(Collider.bounds.center, transform.localScale * 0.5f, 
-            transform.forward, out Hit, transform.rotation, jumpForce);
+        grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, -transform.up, out Hit, transform.rotation, MaxDistance);
 
         MyInput();
 
         if (grounded)
         {
             rb.drag = groundDrag;
+            Debug.Log("Hit : " + Hit.collider.name);
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = 0.5f;
         }
     }
 
@@ -63,8 +65,8 @@ public class MovementScript: MonoBehaviour
     {
         Gizmos.color = Color.yellow;
 
+        Gizmos.DrawWireCube(Collider.bounds.center - Offset, transform.localScale * 0.5f);
 
-        Gizmos.DrawWireCube(transform.position + transform.forward, transform.localScale);
     }
 
     private void MyInput()
