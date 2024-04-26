@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
-
+            Debug.Log("End of Dialogue");
             DialogueFinished.Invoke();
 
             return;
