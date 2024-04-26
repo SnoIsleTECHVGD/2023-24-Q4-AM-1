@@ -1108,6 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292766774}
   - component: {fileID: 292766775}
+  - component: {fileID: 292766776}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -1161,6 +1162,21 @@ MonoBehaviour:
   energy: 0
   maxEnergy: 3
   selectedCard: {fileID: 0}
+--- !u!114 &292766776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292766773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90379b9ea53aa0d478c90a9819c35e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardCode: {fileID: 0}
+  playerStats: {fileID: 0}
+  enemyStats: {fileID: 0}
 --- !u!1 &328204830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2459,58 @@ Transform:
   - {fileID: 1732882457}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &754167415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754167417}
+  - component: {fileID: 754167416}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &754167416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754167415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7870eb0795721214590ee7a0ed79aa6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeck:
+  - {fileID: 11400000, guid: 2cf740e2170674442b2043a198708b21, type: 2}
+  - {fileID: 11400000, guid: 2cf740e2170674442b2043a198708b21, type: 2}
+  - {fileID: 11400000, guid: 2cf740e2170674442b2043a198708b21, type: 2}
+  - {fileID: 11400000, guid: 71da14ac4be9ee24e85bbf1a92728e5a, type: 2}
+  - {fileID: 11400000, guid: ae2d14c280524cf43911cc6d93b17174, type: 2}
+  - {fileID: 11400000, guid: 19cd731842cfe234883b2f70e3f26980, type: 2}
+  cardLibrary: []
+--- !u!4 &754167417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754167415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.77616, y: -10.771168, z: 1.1241239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754965852
 GameObject:
