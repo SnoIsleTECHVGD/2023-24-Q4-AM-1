@@ -57,6 +57,7 @@ public class BattleCode : MonoBehaviour
         }
         discardPile.AddRange(gameManager.playerDeck);
         DrawCards(cardLimit);
+        turn = Turn.player;
 
     }
     #region round controller
