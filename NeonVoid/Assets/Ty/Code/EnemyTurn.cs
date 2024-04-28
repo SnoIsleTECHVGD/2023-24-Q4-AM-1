@@ -117,9 +117,9 @@ public class EnemyTurn : MonoBehaviour
 
     public void SelectAttack()
     {
-        Attack1();
-        //randNum = Random.Range(0, 4);
-        //if(randNum == 0)
+        Attack2();
+        //randNum = Random.Range(0, 2);
+        //if (randNum == 0)
         //{
         //    Debug.Log("ATTACK1");
         //    Attack1();

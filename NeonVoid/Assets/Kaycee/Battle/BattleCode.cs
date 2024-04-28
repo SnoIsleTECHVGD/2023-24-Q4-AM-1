@@ -26,7 +26,7 @@ public class BattleCode : MonoBehaviour
     public List<CardUI> InstantiatedCards = new List<CardUI>();
     public int energy, maxEnergy;
     public CardUI selectedCard;
-    GameManager gameManager;
+    public GameManager gameManager;
     CardEffects cardEffects;
     
 
@@ -90,6 +90,7 @@ public class BattleCode : MonoBehaviour
     {
         yield return new WaitForSeconds(1); //place holder for now, change to length of enemies turn or animation that way 
         Enemy.GetComponent<EnemyTurn>().isEnemyTurn = true;
+        Debug.Log("EnemyTurn GO!");
         NewRound();
     }
     

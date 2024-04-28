@@ -1147,7 +1147,7 @@ MonoBehaviour:
   cardTransform: []
   enemyStats: {fileID: 0}
   playerStats: {fileID: 0}
-  Enemy: {fileID: 713734674}
+  Enemy: {fileID: 725256268}
   drawPile: []
   discardPile: []
   cardsInHand: []
@@ -1162,6 +1162,7 @@ MonoBehaviour:
   energy: 0
   maxEnergy: 3
   selectedCard: {fileID: 0}
+  gameManager: {fileID: 754167416}
 --- !u!114 &292766776
 MonoBehaviour:
   m_ObjectHideFlags: 0
