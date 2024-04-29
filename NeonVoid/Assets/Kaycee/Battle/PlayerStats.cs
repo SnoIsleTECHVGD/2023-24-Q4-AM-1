@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health, sunnyD, shield, overHeat, electrified, overHeatStorage, electrifiedStorage, sunnyDMax, overCharge, moveAmount;
+    public int health, overHeat, electrified, overHeatStorage, electrifiedStorage, moveAmount;
     public string[] barkTextPlayer;
     
     // Start is called before the first frame update
@@ -28,11 +28,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void ResetTurn()
     {
-        sunnyD = sunnyDMax;
-        if(overCharge > 0)
-        {
-            sunnyD = sunnyD + overCharge;
-        }
+        
 
     }
     public void TakeDamage()

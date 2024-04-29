@@ -4891,6 +4891,7 @@ GameObject:
   - component: {fileID: 2018352508}
   - component: {fileID: 2018352513}
   - component: {fileID: 2018352512}
+  - component: {fileID: 2018352514}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5030,6 +5031,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beingAttacked: 0
   Hp: 10
+--- !u!114 &2018352514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018352506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b465b6bcc809af4ca1863b8459921a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  overHeat: 0
+  electrified: 0
+  overHeatStorage: 0
+  electrifiedStorage: 0
+  moveAmount: 0
+  barkTextPlayer: []
 --- !u!1 &2059721316
 GameObject:
   m_ObjectHideFlags: 0
