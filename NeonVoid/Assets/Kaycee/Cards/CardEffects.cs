@@ -7,7 +7,9 @@ public class CardEffects : MonoBehaviour
     public CardCode cardCode;
     BattleCode battleCode;
     public PlayerStats playerStats;
+    GameManager gameManager;
     public EnemyStats enemyStats;
+    public GameObject _battleCode;
     
     public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats, EnemyStats _enemyStats)
     {
@@ -65,7 +67,9 @@ public class CardEffects : MonoBehaviour
     }
     public void SpecialCase()
     {
-        //blank for now, neccesary for threadripper, just gonna take me a bit to acctually get to this yk done
+        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
+        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
+        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
     }
   
 }

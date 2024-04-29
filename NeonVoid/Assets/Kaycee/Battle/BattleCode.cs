@@ -71,24 +71,34 @@ public class BattleCode : MonoBehaviour
             }
             turn = Turn.enemy;
             StartCoroutine(EnemyTurn());
+
         }
         else
         {
             turn = Turn.player;
             energy = maxEnergy;
             DrawCards(cardLimit);
-           
+
         }
-        if(drawPile.Count == 0)
+        if (drawPile.Count == 0)
         {
             ShuffleCards();
         }
+        foreach (CardUI cardUI in InstantiatedCards)
+        {
+            if (cardUI.gameObject.activeSelf)
+                //Instantiate( cardUI.transform.position, Quaternion.identity);
+
+            cardUI.gameObject.SetActive(false);
+            cardsInHand.Remove(cardUI.cards);
+        }
+      
         
         
     } 
     private IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(1); //place holder for now, change to length of enemies turn or animation that way 
+        yield return new WaitForSeconds(1); //place holder for now, change to length of enemies turn or animation
         Enemy.GetComponent<EnemyTurn>().isEnemyTurn = true;
         Debug.Log("EnemyTurn GO!");
         NewRound();
