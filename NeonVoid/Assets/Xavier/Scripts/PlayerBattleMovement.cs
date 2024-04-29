@@ -13,7 +13,7 @@ public class PlayerBattleMovement : MonoBehaviour
     private Vector3 targetPosition = Vector3.zero; // Target position
     private float moveSpeed = 5f; // Movement speed
     private bool isMoving = false; // Player moving?
-    private float rotationSpeed = 90f; // Degrees per second
+    //private float rotationSpeed = 90f; // Degrees per second
 
     void Update()
     {
@@ -102,12 +102,12 @@ public class PlayerBattleMovement : MonoBehaviour
         return true; // No obstacles, so the point is walkable
     }
 
-    void RotatePlayer(float horizontal)
-    {
-        if (horizontal != 0f)
-        {
-            // Rotate the player based on the horizontal input
-            player.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime, Space.Self);
-        }
-    }
+    //void RotatePlayer(float horizontal)
+    //{
+    //    if (horizontal != 0f)
+    //    {
+    //        // Rotate the player based on the horizontal input
+    //        //player.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime, Space.Self);
+    //    }
+    //}
 }
