@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovementScript: MonoBehaviour
@@ -8,6 +9,8 @@ public class MovementScript: MonoBehaviour
 
     public Collider Collider;
     public Transform orientation;
+    public Transform PlayerForward;
+    public Animator animator;
 
     float horizontalInput;
     float verticalInput;
@@ -43,22 +46,33 @@ public class MovementScript: MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        PlayerForward.forward = orientation.forward;
     }
     private void Update()
     {
         grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, -transform.up, out Hit, transform.rotation, MaxDistance);
 
         MyInput();
+        
+        if(horizontalInput < 1f && verticalInput < 1f || horizontalInput < -1f && verticalInput < -1f)
+        {
+            animator.SetBool("IsMoving", false);
+            Debug.Log("IDLE");
+        }
+
 
         if (grounded)
         {
+            animator.SetBool("IsGrounded", true);
             rb.drag = groundDrag;
             Debug.Log("Hit : " + Hit.collider.name);
         }
         else
         {
+            animator.SetBool("IsGrounded", false);
             rb.drag = 0.5f;
         }
+
     }
 
     private void OnDrawGizmos()
@@ -80,7 +94,7 @@ public class MovementScript: MonoBehaviour
             readyToJump = false;
 
             Jump();
-
+            animator.SetTrigger("Jump");
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
@@ -88,10 +102,14 @@ public class MovementScript: MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
+        animator.SetBool("IsMoving", true);
 
         if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+            
+        }
+
 
         else if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * airMulitipler, ForceMode.Force);
@@ -118,5 +136,6 @@ public class MovementScript: MonoBehaviour
     private void ResetJump()
     {
        readyToJump = true;
+        animator.ResetTrigger("Jump");
     }
 }
