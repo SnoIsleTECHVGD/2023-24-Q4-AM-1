@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour
 {
+    //throw this code on each individual card "area" then make a child object which will be the parent of the individual aspects of the card, tmp for the discription, icon for the card so on so forth
     public CardCode cards;
     public TMP_Text cardDescription;
     public Image CardImage;
