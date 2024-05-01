@@ -24,9 +24,9 @@ public class BattleCode : MonoBehaviour
     public int cardLimit, drawCard, deckSize; // card and deck ints
     public List<GameObject> discard;
     public List<CardUI> InstantiatedCards = new List<CardUI>();
-    public int energy, maxEnergy;
-    public CardUI selectedCard;
-    public GameManager gameManager;
+    public int energy, maxEnergy; // I be maxing to krusty krab pizza edits 
+    public CardUI selectedCard; // I select that gyatt like ice spice smoking pot
+    public GameManager gameManager; // I manage her game so she game on my manager 
     CardEffects cardEffects;
     
 
