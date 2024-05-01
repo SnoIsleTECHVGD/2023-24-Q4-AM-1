@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
 
     public UnityEvent DialogueFinished;
 
+    public Dialogue dialogue;
+
     public Animator animator;
 
     private Queue<string> sentences;

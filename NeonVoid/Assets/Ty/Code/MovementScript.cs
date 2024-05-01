@@ -19,6 +19,7 @@ public class MovementScript: MonoBehaviour
 
     Rigidbody rb;
 
+    public bool CanMove;
     public float jumpForce;
     public float jumpCooldown;
     public float airMulitipler;
@@ -44,33 +45,37 @@ public class MovementScript: MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
-        PlayerForward.forward = orientation.forward;
+        if (CanMove == true)
+        {
+            MovePlayer();
+            PlayerForward.forward = orientation.forward;
+        }
     }
     private void Update()
     {
         grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, -transform.up, out Hit, transform.rotation, MaxDistance);
-
-        MyInput();
-
-        float speed = rb.velocity.magnitude;
-        if (speed < 0.5)
+        if (CanMove == true)
         {
-            animator.SetBool("IsMoving", false);
-        }
+            MyInput();
+
+            float speed = rb.velocity.magnitude;
+            if (speed < 0.5)
+            {
+                animator.SetBool("IsMoving", false);
+            }
 
             if (grounded)
-        {
-            animator.SetBool("IsGrounded", true);
-            rb.drag = groundDrag;
-            Debug.Log("Hit : " + Hit.collider.name);
+            {
+                animator.SetBool("IsGrounded", true);
+                rb.drag = groundDrag;
+                Debug.Log("Hit : " + Hit.collider.name);
+            }
+            else
+            {
+                animator.SetBool("IsGrounded", false);
+                rb.drag = 0.5f;
+            }
         }
-        else
-        {
-            animator.SetBool("IsGrounded", false);
-            rb.drag = 0.5f;
-        }
-
     }
 
     private void OnDrawGizmos()
@@ -137,5 +142,16 @@ public class MovementScript: MonoBehaviour
     {
        readyToJump = true;
         animator.ResetTrigger("Jump");
+    }
+
+    public void StartMove()
+    {
+        CanMove = true;
+    }
+
+    public void StopMove()
+    {
+        CanMove = false;
+        animator.SetBool("IsMoving",false);
     }
 }
