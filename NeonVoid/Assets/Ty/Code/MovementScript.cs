@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovementScript: MonoBehaviour
@@ -53,15 +52,14 @@ public class MovementScript: MonoBehaviour
         grounded = Physics.BoxCast(Collider.bounds.center - Offset, transform.localScale * 0.5f, -transform.up, out Hit, transform.rotation, MaxDistance);
 
         MyInput();
-        
-        if(horizontalInput < 1f && verticalInput < 1f || horizontalInput < -1f && verticalInput < -1f)
+
+        float speed = rb.velocity.magnitude;
+        if (speed < 0.5)
         {
             animator.SetBool("IsMoving", false);
-            Debug.Log("IDLE");
         }
 
-
-        if (grounded)
+            if (grounded)
         {
             animator.SetBool("IsGrounded", true);
             rb.drag = groundDrag;
@@ -88,7 +86,9 @@ public class MovementScript: MonoBehaviour
          horizontalInput = Input.GetAxisRaw("Horizontal");
          verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        
+
+        if(Input.GetKeyDown(jumpKey) && readyToJump == true && grounded == true)
         {
 
             readyToJump = false;
