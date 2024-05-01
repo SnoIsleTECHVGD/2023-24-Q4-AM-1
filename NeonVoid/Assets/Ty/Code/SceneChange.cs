@@ -9,6 +9,10 @@ public class SceneChange : MonoBehaviour
     public Animator transition;
 
     public float transitionTime;
+
+    public int SceneNumber { get; set; }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +21,7 @@ public class SceneChange : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + SceneNumber));
     }
 
     public void LoadPreviousLevel()

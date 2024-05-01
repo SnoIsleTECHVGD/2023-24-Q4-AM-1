@@ -12,7 +12,6 @@ public class DialogueManager : MonoBehaviour
 
     public UnityEvent DialogueFinished;
 
-    public Dialogue dialogue;
 
     public Animator animator;
 
@@ -28,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Cursor.lockState = CursorLockMode.None;
+
         animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;
@@ -71,6 +72,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("End of Conversation.");
     }
 }
