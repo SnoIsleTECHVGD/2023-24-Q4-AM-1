@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    [SerializeField] AudioMixerGroup audioMixerGroup;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class MusicManager : MonoBehaviour
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
+        audioMixerGroup.audioMixer.SetFloat("Volume", volumeSlider.value);
         Save();
     }
 
