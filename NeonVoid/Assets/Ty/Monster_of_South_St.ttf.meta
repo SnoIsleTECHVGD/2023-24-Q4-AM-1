@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: af92052165a34e74798c7e7c90e2b503
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Monster oF South St
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3bd65a1a0a637dd42b42ece0b39c3d65, type: 3}
+  - {fileID: 12800000, guid: 62cb8441d5b140642af59995e71baed5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -106,7 +106,11 @@ public class MovementScript: MonoBehaviour
 
     private void MovePlayer()
     {
+
+        //Issue starts here
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        
         animator.SetBool("IsMoving", true);
 
         if (grounded)
