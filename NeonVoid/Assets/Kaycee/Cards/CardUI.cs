@@ -19,7 +19,7 @@ public class CardUI : MonoBehaviour
     }
     public void LoadCard(CardCode _cards)
     {
-        
+        Debug.Log("attempting to load card");
         cards = _cards;
         gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         cardDescription.text = cards.cardDescription;
