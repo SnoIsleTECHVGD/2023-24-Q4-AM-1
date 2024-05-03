@@ -10,6 +10,10 @@ public class TriggerEncounter : MonoBehaviour
 
     public UnityEvent EncounterEvents;
 
+    public UnityEvent EncounterEventsWaited;
+
+    public int TriggerSeconds { get; set; } = 2;
+
     private void OnTriggerEnter(Collider other)
     {
         hasTriggered = true;
@@ -20,5 +24,18 @@ public class TriggerEncounter : MonoBehaviour
     public void TriggeringEvent()
     {
         EncounterEvents.Invoke();
+    }
+
+    public IEnumerator TriggeringEventInSec()
+    {
+
+        yield return new WaitForSeconds(TriggerSeconds);
+
+        EncounterEventsWaited.Invoke();
+    }
+
+    public void InvokeTheSec()
+    {
+        StartCoroutine(TriggeringEventInSec());
     }
 }
