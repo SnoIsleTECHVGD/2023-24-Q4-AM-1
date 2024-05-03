@@ -825,7 +825,7 @@ MonoBehaviour:
   deckSize: 0
   discard: []
   InstantiatedCards:
-  - {fileID: 0}
+  - {fileID: 1569851415}
   - {fileID: 1383023749}
   - {fileID: 373386087}
   energy: 0

@@ -28,12 +28,16 @@ public class BattleCode : MonoBehaviour
     public CardUI selectedCard; // I select that gyatt like ice spice smoking pot
     public GameManager gameManager; // I manage her game so she game on my manager 
     CardEffects cardEffects;
-    
+
 
 
 
     #endregion
-    
+    public void Awake()
+    {
+        BeginCombat();
+    }
+
     public void PlayedCard(CardUI cardUI)
     {
         cardEffects.AvailableActions(cardUI.cards, playerStats, enemyStats);
@@ -115,6 +119,7 @@ public class BattleCode : MonoBehaviour
     }
     public void DisplayCardInHand(CardCode card)
     {
+        Debug.Log("trigger test");
         CardUI cardUI = InstantiatedCards[cardsInHand.Count - 1];
         cardUI.LoadCard(card);
         cardUI.gameObject.SetActive(true);
