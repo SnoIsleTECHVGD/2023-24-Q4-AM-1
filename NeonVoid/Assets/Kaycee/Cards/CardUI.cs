@@ -25,4 +25,10 @@ public class CardUI : MonoBehaviour
         cardDescription.text = cards.cardDescription;
         CardImage.sprite = cards.CardIcon;
   }
+    public void PlayedCard()
+    {
+        if (battleCode.energy < cards.cost)
+            return; // activate what happens after
+            battleCode.PlayedCard(this);
+    }
 }
