@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     public UnityEvent DialogueFinished;
 
 
+    public UnityEvent DialogueEvent;
+
     public Animator animator;
 
     private Queue<string> sentences;
@@ -53,6 +55,8 @@ public class DialogueManager : MonoBehaviour
 
             return;
         }
+
+        DialogueEvent.Invoke();
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
