@@ -24,8 +24,7 @@ public class MusicManager : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value;
-        audioMixerGroup.audioMixer.SetFloat("Volume", volumeSlider.value);
+        audioMixerGroup.audioMixer.SetFloat("MusicVolume", volumeSlider.value);
         Save();
     }
 
