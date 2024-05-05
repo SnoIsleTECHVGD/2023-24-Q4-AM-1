@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MusicManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
-    [SerializeField] AudioMixerGroup audioMixerGroup;
+    [SerializeField] AudioMixerGroup musicMixerGroup;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class MusicManager : MonoBehaviour
 
     public void ChangeVolume()
     {
-        audioMixerGroup.audioMixer.SetFloat("MusicVolume", volumeSlider.value);
+        musicMixerGroup.audioMixer.SetFloat("MusicVolume", volumeSlider.value);
         Save();
     }
 
