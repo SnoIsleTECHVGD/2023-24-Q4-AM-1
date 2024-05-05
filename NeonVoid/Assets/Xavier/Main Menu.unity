@@ -8142,10 +8142,10 @@ RectTransform:
   m_Father: {fileID: 351915939}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 119, y: 87.5}
-  m_SizeDelta: {x: 164, y: 56}
+  m_AnchorMin: {x: 0.027961882, y: 0.07378945}
+  m_AnchorMax: {x: 0.112, y: 0.13787512}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1959397949
 AudioSource:
