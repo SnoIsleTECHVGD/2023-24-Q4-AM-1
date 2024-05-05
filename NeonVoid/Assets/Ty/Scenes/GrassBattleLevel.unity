@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -14.2
       objectReference: {fileID: 0}
+    - target: {fileID: -415136158766342463, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1052,7 +1056,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
