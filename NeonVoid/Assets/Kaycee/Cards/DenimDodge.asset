@@ -24,7 +24,7 @@ MonoBehaviour:
   Common: 1
   Rare: 0
   Legendary: 0
-  CardIcon: {fileID: 21300000, guid: 42bfdf04f3e448f44a51ab0d9c560110, type: 3}
+  CardIcon: {fileID: -1426296716, guid: 42bfdf04f3e448f44a51ab0d9c560110, type: 3}
   overHeat: 0
   electrified: 0
   block: 0
