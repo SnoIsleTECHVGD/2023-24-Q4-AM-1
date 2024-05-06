@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
+=======
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+>>>>>>> 0e7f444935a498c2201048cea691e4117c9179fb
   - enabled: 1
     path: Assets/Xavier/Main Menu.unity
-    guid: 359ae0dc9cd08644bada28f3c6c5f58e
+    guid: 6a556e2d34ef4a9428dfbf46e09f36a6
   - enabled: 1
     path: Assets/Ty/Scenes/GrassLevel.unity
     guid: f8007a76f8d8d6247a87a5051d2ab5fe
