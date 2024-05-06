@@ -21,7 +21,7 @@ public class CardUI : MonoBehaviour
     {
         Debug.Log("attempting to load card");
         cards = _cards;
-        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        
         cardDescription.text = cards.cardDescription;
         CardImage.sprite = cards.CardIcon;
   }
