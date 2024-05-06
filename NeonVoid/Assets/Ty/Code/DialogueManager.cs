@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Cursor.lockState = CursorLockMode.None;
+        Invoke("CursorUnlock", 1);
 
         animator.SetBool("IsOpen", true);
 
@@ -78,5 +78,10 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("End of Conversation.");
+    }
+
+    public void CursorUnlock()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }

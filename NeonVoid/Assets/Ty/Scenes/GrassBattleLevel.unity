@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: A Head
+    name: Manet
     sentences:
     - Ah, Looky here. A little Glitch seems to gotten its way onto the web.
     - Don't cha worry. You're fine and dandy as long as you ain't gonna cause harm.

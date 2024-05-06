@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58945236adbc1b947b75534f208a1350
+guid: 1e562e31da777f74d8516f73538d3ac3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,28 +129,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: IMG_0366_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 1076
-        height: 1461
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75f05ceda98b2ed40bf05d4e81a66ba6
-      internalID: -877491279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -161,8 +140,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      IMG_0366_0: -877491279
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
