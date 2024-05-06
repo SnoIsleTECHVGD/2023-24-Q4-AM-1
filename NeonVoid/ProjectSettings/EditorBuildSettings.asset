@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Ty/Scenes/GrassLevel Continued.unity
     guid: f4a234ddcda49db459664e25b551cce2
   - enabled: 1
+    path: Assets/Ty/Scenes/CyberLevel.unity
+    guid: 1ab5c9cb7473f6f4e9ea73602a4e9b4a
+  - enabled: 1
     path: Assets/Ty/Scenes/StormLevel.unity
     guid: c9c5435ee9a602b44afd13138b92e530
   - enabled: 1

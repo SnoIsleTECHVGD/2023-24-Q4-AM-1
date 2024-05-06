@@ -16,9 +16,12 @@ public class TriggerEncounter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        hasTriggered = true;
-
-        TriggeringEvent();
+        
+        if(hasTriggered == false)
+        {
+            TriggeringEvent();
+            hasTriggered = true;
+        }
     }
 
     public void TriggeringEvent()

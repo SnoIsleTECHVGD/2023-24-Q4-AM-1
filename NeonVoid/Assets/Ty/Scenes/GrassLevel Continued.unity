@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1530850}
   - component: {fileID: 1530849}
   - component: {fileID: 1530848}
+  - component: {fileID: 1530851}
   m_Layer: 0
   m_Name: TriggerEncounter (2)
   m_TagString: Untagged
@@ -218,6 +219,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1530851}
+        m_TargetAssemblyTypeName: InvokeDelay, Assembly-CSharp
+        m_MethodName: set_CanInvoke
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   EncounterEventsWaited:
     m_PersistentCalls:
       m_Calls:
@@ -261,6 +274,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e98f62b66d6159438d9f742ef4f18cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelaySeconds: 3
+  DelayedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1012291781}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: set_SceneNumber
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1012291781}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &23337035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1eb98aa5aae7aaa43bebf4666030a9e6, type: 3}
@@ -1451,7 +1504,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
-  - {fileID: -8022970132509206216, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
+  - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
   - {fileID: 7135170721227270944, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
@@ -2199,7 +2252,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720677306}
-  m_LocalRotation: {x: 0.03813432, y: 0.5730216, z: -0.026706597, w: 0.81821686}
+  m_LocalRotation: {x: 0.038134318, y: 0.5730216, z: -0.026706597, w: 0.81821686}
   m_LocalPosition: {x: -78.86131, y: -8.425003, z: 8.012319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2432,6 +2485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2371a847c0470e049aae29ba5efa560e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spawn: {x: 0, y: 0, z: 0}
   threshold: -2.7
 --- !u!114 &764014175
 MonoBehaviour:
@@ -3613,7 +3667,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
-  - {fileID: -8022970132509206216, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
+  - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
   - {fileID: 7135170721227270944, guid: d40b2e6221090704a9ad92ddf3921916, type: 3}
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}
   - {fileID: 2100000, guid: f0e20d28308d3144b86e64ac6ef26e87, type: 2}

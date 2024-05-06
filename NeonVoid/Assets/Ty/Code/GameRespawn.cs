@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameRespawn : MonoBehaviour
 {
-
+    public Vector3 Spawn;
     public float threshold;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class GameRespawn : MonoBehaviour
     {
         if(transform.position.y < threshold)
         {
-            transform.position = new Vector3(32.3f, 12.34f, -12.592f);
+            transform.position = Spawn;
         }
     }
 }
