@@ -10,7 +10,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject DeathScript;
 
     public GameObject BattleMovementObject;
-    
+
+    public GameObject HealthObj;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +41,14 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int amount)
     {
 
-        if(health <= 0 || health >= -1)
+        if(health <= 0 || health == -health)
         {
             Debug.Log("Game Over");
             DeathScript.GetComponent<DeathTrigger>().DeathEventTrigger();
         }
         else
         health -= amount;
+        HealthObj.GetComponent<HealthDisplay>().healthAmount = health;
     }
    
 }

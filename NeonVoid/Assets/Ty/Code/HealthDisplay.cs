@@ -12,7 +12,7 @@ public class HealthDisplay : MonoBehaviour
 
     private void Update()
     {
-        healthAmount = PC.GetComponent<PlayerStats>().health;
+
     }
 
     public void UpdateHealth()
