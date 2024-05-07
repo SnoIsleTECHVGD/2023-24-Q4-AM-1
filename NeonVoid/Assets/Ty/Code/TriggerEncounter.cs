@@ -16,7 +16,7 @@ public class TriggerEncounter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("Here");
         if(hasTriggered == false)
         {
             TriggeringEvent();

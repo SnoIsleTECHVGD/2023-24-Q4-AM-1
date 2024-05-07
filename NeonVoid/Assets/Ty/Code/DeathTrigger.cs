@@ -10,7 +10,7 @@ public class DeathTrigger : MonoBehaviour
     public UnityEvent DeathEvent;
 
 
-    public void DeathEventTrigger()
+    public void PlayerDeathEventTrigger()
     {
         DeathEvent.Invoke();
     }

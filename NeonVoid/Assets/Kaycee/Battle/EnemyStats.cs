@@ -16,7 +16,9 @@ public class EnemyStats : MonoBehaviour
     public int point1, point2, point3, point4, point5, point6; // atk patterns for ai
     public int damage, specialEffect; //damage and special infliction cases
     //public List<EnemyAction>
-    public AudioSource EnemyAttack; 
+    public AudioSource EnemyAttack;
+
+    public GameObject EnemyDeathTrigger;
 
     public bool isWhiling;
     void Start()
@@ -83,6 +85,7 @@ public class EnemyStats : MonoBehaviour
         {
             //combat won
             Debug.Log("Player Won!");
+
         }
     }
     
