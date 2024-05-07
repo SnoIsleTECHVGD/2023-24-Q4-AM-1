@@ -13,6 +13,7 @@ public class CardEffects : MonoBehaviour
     private void Awake()
     {
         battleCode = FindObjectOfType<BattleCode>();
+        cardCode = FindObjectOfType<CardCode>();
     }
     public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats, EnemyStats _enemyStats)
     {
