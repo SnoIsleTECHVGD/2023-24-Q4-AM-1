@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DenimDodge
   m_EditorClassIdentifier: 
   cardName: Denim Dodge
-  cardDescription: 
+  cardDescription: 1 cost - 1 move
   power: 0
   attack: 0
   skill: 1

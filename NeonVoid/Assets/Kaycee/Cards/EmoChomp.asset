@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EmoChomp
   m_EditorClassIdentifier: 
   cardName: Emo Chomp
-  cardDescription: 
+  cardDescription: 2 cost - 12 damage
   power: 0
   attack: 1
   skill: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
   block: 0
   overCharge: 0
   Vulnerable: 0
-  damage: 18
+  damage: 12
   moveAmount: 0
   cost: 2
   inflictNum: 0

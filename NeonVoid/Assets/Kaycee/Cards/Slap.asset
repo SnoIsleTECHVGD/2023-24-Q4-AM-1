@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slap
   m_EditorClassIdentifier: 
   cardName: Slap
-  cardDescription: 
+  cardDescription: 0 cost - 2 dmg
   power: 0
   attack: 1
   skill: 0

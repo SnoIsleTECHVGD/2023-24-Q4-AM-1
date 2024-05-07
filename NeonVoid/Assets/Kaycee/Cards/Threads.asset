@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Threads
   m_EditorClassIdentifier: 
   cardName: Thread
-  cardDescription: 
+  cardDescription: 0 cost - 5 damage
   power: 0
   attack: 1
   skill: 0

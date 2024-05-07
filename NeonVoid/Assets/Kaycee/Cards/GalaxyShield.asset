@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GalaxyShield
   m_EditorClassIdentifier: 
   cardName: Galaxy Shield
-  cardDescription: 
+  cardDescription: 2 cost - 1 shield
   power: 0
   attack: 0
   skill: 1

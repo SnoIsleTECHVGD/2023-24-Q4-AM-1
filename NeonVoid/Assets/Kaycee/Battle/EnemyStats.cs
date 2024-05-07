@@ -9,8 +9,6 @@ public class EnemyStats : MonoBehaviour
     public GameObject enemyRef, playerRef;
     PlayerStats player;
     public string enemyName;
-    public bool Enemy01, Boss;
-    public string[] barkText;
     private GameObject[] LocationPoints;
     public int currentPlayerLoc, attackPoint;
     public bool dead, infliction, utilityBool;// Utility is just gonna be something i set true or false for special mechanics if need be 
@@ -33,17 +31,7 @@ public class EnemyStats : MonoBehaviour
       
 
         
-        if (utilityBool == true)
-        {
-            if (Boss == true)
-            {
-                staggerHealth = healthStorage - health;
-                if (staggerHealth >= 20)
-                {
-                   
-                }
-            }
-        }
+       
     }
     //what i'll probably do is have multiple tags that will dictate what script to call on, that way we might be able to keep this script as the 'universal' ai script, with other minor ai scripts to go with it
     // Initial attack brodcast, dictates where the enemy will hit next on round start

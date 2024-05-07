@@ -925,6 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024748551}
   - component: {fileID: 1024748550}
+  - component: {fileID: 1024748552}
   m_Layer: 0
   m_Name: EnemySystem
   m_TagString: Untagged
@@ -981,6 +982,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024748552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024748549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44ebaaeb2f082042a2d9ee38e65c606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRef: {fileID: 1024748549}
+  playerRef: {fileID: 0}
+  enemyName: 
+  currentPlayerLoc: 0
+  attackPoint: 0
+  dead: 0
+  infliction: 0
+  utilityBool: 0
+  health: 9
+  block: 0
+  overHeat: 0
+  electrified: 0
+  electrifiedEnemy: 0
+  overHeatEnemy: 0
+  healthStorage: 0
+  staggerHealth: 0
+  point1: 0
+  point2: 0
+  point3: 0
+  point4: 0
+  point5: 0
+  point6: 0
+  damage: 0
+  specialEffect: 0
+  EnemyAttack: {fileID: 0}
+  isWhiling: 0
 --- !u!1 &1083464542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,10 +2481,58 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6599457863609496315, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 468780085}
+    - target: {fileID: 6599457863609496315, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayedCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457863609496315, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CardUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457863609496315, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457863656504938, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955786558}
+    - target: {fileID: 6599457863656504938, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayedCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457863656504938, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CardUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457863656504938, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6599457864265304539, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 703346038}
+    - target: {fileID: 6599457864617827609, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2106737568}
+    - target: {fileID: 6599457864617827609, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayedCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457864617827609, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CardUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599457864617827609, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
+      propertyPath: Card.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6599457864857201109, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
