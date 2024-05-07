@@ -9,12 +9,22 @@ public class CardEffects : MonoBehaviour
     public PlayerStats playerStats;
     GameManager gameManager;
     public EnemyStats enemyStats;
-    public GameObject _battleCode;
     
+    private void Awake()
+    {
+        battleCode = FindObjectOfType<BattleCode>();
+    }
     public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats, EnemyStats _enemyStats)
     {
+        cardCode = _cardCode;
+
+        playerStats = _playerStats;
+        enemyStats = _enemyStats;
+        Debug.Log("card is being recognized");
         switch (cardCode.cardName)
         {
+            
+            
             case "Denim Dodge":
                 MovePlayer();
                 break;
@@ -67,9 +77,9 @@ public class CardEffects : MonoBehaviour
     }
     public void SpecialCase()
     {
-        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
-        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
-        _battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
+        battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
+        battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
+        battleCode.GetComponent<BattleCode>().cardsInHand.Add(gameManager.cardLibrary[1]);
     }
   
 }

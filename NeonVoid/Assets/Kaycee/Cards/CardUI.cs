@@ -12,7 +12,11 @@ public class CardUI : MonoBehaviour
     public TMP_Text cardDescription;
     public Image CardImage;
     BattleCode battleCode;
-    public void SelectCard()
+    private void Awake()
+    {
+        battleCode = FindObjectOfType<BattleCode>();
+    }
+        public void SelectCard()
     {
         
         battleCode.selectedCard = this;
