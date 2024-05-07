@@ -34,5 +34,8 @@ public class CardUI : MonoBehaviour
         if (battleCode.energy < cards.cost)
             return; // activate what happens after
             battleCode.PlayedCard(this);
+            Debug.Log("PlayedCard");
+            
+            
     }
 }
