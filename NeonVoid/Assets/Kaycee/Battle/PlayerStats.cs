@@ -7,8 +7,11 @@ public class PlayerStats : MonoBehaviour
     public int health, overHeat, electrified, overHeatStorage, electrifiedStorage, moveAmount;
     public string[] barkTextPlayer;
 
+    public GameObject DeathScript;
+
+    public GameObject BattleMovementObject;
     
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void MovePlayer()
     {
+        BattleMovementObject.GetComponent<BattleMovement>().NormalMove();
 
     }
     public void PlayerEffects()
@@ -36,9 +40,10 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int amount)
     {
 
-        if(health <= 0)
+        if(health <= 0 || health >= -1)
         {
             Debug.Log("Game Over");
+            DeathScript.GetComponent<DeathTrigger>().DeathEventTrigger();
         }
         else
         health -= amount;

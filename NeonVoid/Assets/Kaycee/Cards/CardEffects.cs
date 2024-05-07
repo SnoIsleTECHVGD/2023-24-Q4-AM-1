@@ -77,6 +77,7 @@ public class CardEffects : MonoBehaviour
     public void MovePlayer()
     {
         playerStats.MovePlayer();
+        PlayerAni.SetTrigger("MoveLeft");
     }
     public void GiveBuff()
     {

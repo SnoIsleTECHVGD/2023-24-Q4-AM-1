@@ -26,7 +26,7 @@ public class SceneChange : MonoBehaviour
 
     public void LoadPreviousLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - SceneNumber));
     }
       
     IEnumerator LoadLevel(int levelIndex)

@@ -39,6 +39,8 @@ public class EnemyTurn : MonoBehaviour
     public GameObject UpperRightPoint;
     public GameObject LowerRightPoint;
 
+
+    public GameObject PlayerHealth;
     Vector3 fwd;
 
     private void Start()
@@ -69,6 +71,7 @@ public class EnemyTurn : MonoBehaviour
                 Player.GetComponent<PlayerStats>().TakeDamage(A1Damage);
                 Debug.Log("HURT!");
                 PlayerAni.SetTrigger("Hurt");
+                PlayerHealth.GetComponent<HealthDisplay>().UpdateHealth();
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -83,11 +86,12 @@ public class EnemyTurn : MonoBehaviour
         }
         if (isAttack2 == true)
         {
-            if (Player.GetComponent<DetectionScript>().BeingAttacked == true)
+            if (CurrentLocation.GetComponent<DetectionScript>().BeingAttacked == true)
             {
                 Player.GetComponent<PlayerStats>().TakeDamage(A2Damage);
                 Debug.Log("HURT!");
                 PlayerAni.SetTrigger("Hurt");
+                PlayerHealth.GetComponent<HealthDisplay>().UpdateHealth();
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -102,11 +106,12 @@ public class EnemyTurn : MonoBehaviour
         }
         if (isAttack3 == true)
         {
-            if (Player.GetComponent<DetectionScript>().BeingAttacked == true)
+            if (CurrentLocation.GetComponent<DetectionScript>().BeingAttacked == true)
             {
                 Player.GetComponent<PlayerStats>().TakeDamage(A3Damage);
                 Debug.Log("HURT!");
                 PlayerAni.SetTrigger("Hurt");
+                PlayerHealth.GetComponent<HealthDisplay>().UpdateHealth();
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -123,26 +128,21 @@ public class EnemyTurn : MonoBehaviour
 
     public void SelectAttack()
     {
-        Attack2();
-        //randNum = Random.Range(0, 2);
-        //if (randNum == 0)
-        //{
-        //    Debug.Log("ATTACK1");
-        //    Attack1();
-        //}
-        //if (randNum == 1)
-        //{
-        //    Debug.Log("ATTACK2");
-        //    Attack2();
-        //}
-        //if (randNum == 2)
-        //{
-        //    Debug.Log("ATTACK3");
-        //}
-        //if (randNum == 3)
-        //{
-        //    
-        //}
+        randNum = Random.Range(0, 2);
+        if (randNum == 0)
+        {
+            Debug.Log("ATTACK1");
+            Attack1();
+        }
+        if (randNum == 1)
+        {
+            Debug.Log("ATTACK2");
+            Attack2();
+        }
+        if (randNum == 2)
+        {
+            Debug.Log("ATTACK3");
+        }
         isEnemyTurn = false;
     }
 
@@ -150,13 +150,14 @@ public class EnemyTurn : MonoBehaviour
     {
         CurrentLocation.GetComponent<DetectionScript>().isAttacking = true;
         setAttack = true;
+        isAttack1 = true;
     }
 
     public void Attack2()
     {
         setAttack = true;
-        isAttack1 = true;
-        if(BottomPoint == CurrentLocation)
+        isAttack2 = true;
+        if (BottomPoint == CurrentLocation)
         {
             BottomPoint.GetComponent<DetectionScript>().isAttacking = true;
             LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
@@ -209,6 +210,7 @@ public class EnemyTurn : MonoBehaviour
         LowerLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
         UpperLeftPoint.GetComponent<DetectionScript>().isAttacking = true;
         setAttack = true;
+        isAttack3 = true;
     }
 
 }

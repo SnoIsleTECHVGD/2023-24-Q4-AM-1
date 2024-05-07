@@ -7,6 +7,8 @@ public class DetectionScript : MonoBehaviour
     public GameObject Player;
     public GameObject CurrentLocation;
     public GameObject EnemySystem;
+    public GameObject BattleMovObj;
+
     public bool isAttacking;
     public bool isCurrent;
     public Material StandardMaterial;
@@ -41,6 +43,7 @@ public class DetectionScript : MonoBehaviour
         Debug.Log(this.gameObject);
         CurrentLocation = this.gameObject;
         EnemySystem.GetComponent<EnemyTurn>().CurrentLocation = this.gameObject;
+        BattleMovObj.GetComponent<BattleMovement>().CurrentLocation = this.gameObject;
     }
 
     private void OnTriggerStay(Collider Player)
