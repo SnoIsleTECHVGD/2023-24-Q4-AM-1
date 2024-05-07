@@ -961,7 +961,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427371747}
-  m_LocalRotation: {x: 0.23105137, y: 0.24314535, z: -0.05975397, w: 0.9401729}
+  m_LocalRotation: {x: 0.23105137, y: 0.24314536, z: -0.059753977, w: 0.9401729}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2143,6 +2143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a6bc8d68b06c549827c250f152b14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicClips:
+  - {fileID: 8300000, guid: d1b1b7f500be1e344928d38048309894, type: 3}
+  Audio: {fileID: 1078420106}
 --- !u!1 &1097761433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,10 +4186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6503d2a1a5d9f134ea05300ae4edcea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Computer
-    sentences:
-    - HI THERE
+  dialogue: {fileID: 0}
   dialogueManager: {fileID: 1808177204}
 --- !u!1 &1678013398
 GameObject:
