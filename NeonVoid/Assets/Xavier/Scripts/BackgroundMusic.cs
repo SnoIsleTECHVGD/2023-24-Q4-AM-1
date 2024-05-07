@@ -1,40 +1,34 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackgroundMusic : MonoBehaviour
+public class DoNotDestroy : MonoBehaviour
 {
-    static BackgroundMusic instance;
+    static DoNotDestroy instance;
 
+    // Drag in the .mp3 files here, in the editor
     public AudioClip[] MusicClips;
 
     public AudioSource Audio;
 
+    // Singleton to keep instance alive through all scenes
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
-            if (musicObj.Length > 1)
-            {
-                Destroy(this.gameObject);
-            }
-            DontDestroyOnLoad(this.gameObject);
+        if (instance == null) { instance = this; }
+        else { Destroy(gameObject); }
 
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
+
+        // Hooks up the 'OnSceneLoaded' method to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    // Called whenever a scene is loaded
     void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
-        // Replacement audio
+        // Replacement variable (doesn't change the original audio source)
         AudioSource source = new AudioSource();
 
-        // Scene Music
+        // Plays different music in different scenes
         switch (scene.name)
         {
             case "Scene1":
@@ -48,7 +42,7 @@ public class BackgroundMusic : MonoBehaviour
                 break;
         }
 
-        // Change music if clip changes
+        // Only switch the music if it changed
         if (source.clip != Audio.clip)
         {
             Audio.enabled = false;
