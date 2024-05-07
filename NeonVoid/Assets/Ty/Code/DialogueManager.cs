@@ -83,11 +83,13 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Unlock Cursor");
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void CursorLock()
     {
         Debug.Log("Lock Cursor");
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
