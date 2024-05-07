@@ -76,12 +76,18 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("End of Conversation.");
     }
 
     public void CursorUnlock()
     {
+        Debug.Log("Unlock Cursor");
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CursorLock()
+    {
+        Debug.Log("Lock Cursor");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
