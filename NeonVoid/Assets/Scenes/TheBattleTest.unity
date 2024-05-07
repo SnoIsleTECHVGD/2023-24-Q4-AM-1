@@ -1705,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5483045964018619430, guid: 01ec852e4ef3835478077842a0b03aca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5483045964018619431, guid: 01ec852e4ef3835478077842a0b03aca, type: 3}
       propertyPath: transitionTime
@@ -3185,30 +3185,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1457929876}
     m_Modifications:
-    - target: {fileID: 6599457863146964022, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599457863609496317, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599457863656504942, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6599457864265304539, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 292766775}
-    - target: {fileID: 6599457864607702463, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599457864617827613, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6599457864857201109, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3308,10 +3288,6 @@ PrefabInstance:
     - target: {fileID: 6599457864857201113, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
       propertyPath: m_Name
       value: Deck Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599457864889542796, guid: c56d67293753f1c428ecbba6d62cb6f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
