@@ -2460,7 +2460,7 @@ MonoBehaviour:
   damage: 3
   specialEffect: 0
   EnemyAttack: {fileID: 0}
-  EnemyDeathEvent: {fileID: 0}
+  EnemyDeathEvent: {fileID: 1618882513}
   isWhiling: 0
 --- !u!1 &1029200283
 GameObject:
