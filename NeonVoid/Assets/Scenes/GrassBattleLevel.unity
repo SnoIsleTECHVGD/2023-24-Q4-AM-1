@@ -1555,19 +1555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6503d2a1a5d9f134ea05300ae4edcea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Manet
-    sentences:
-    - Ah, Looky here. A little Glitch seems to gotten its way onto the web.
-    - Don't cha worry. You're fine and dandy as long as you ain't gonna cause harm.
-    - Not like that new AI Poster Girl up in The Cyberverse.
-    - She be spreading all this miss-for-may-tion and pop-ups.
-    - Wait...
-    - What if I got your help!
-    - I can send you to take out that AI before she goes and messes around and changes
-      the world too much.
-    - How about it? You go take care of this, you might even find some of my friends
-      around.
+  dialogue: {fileID: 11400000, guid: cfe9aebd0247d70419c36329bfd2e542, type: 2}
   dialogueManager: {fileID: 1933255817}
 --- !u!4 &2071470232
 Transform:

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3852ef6f29cb8445ba208d8ebb7f42c, type: 3}
+  m_Name: ManetDialogue
+  m_EditorClassIdentifier: 
+  NpcName: Manet
+  sentences:
+  - Ah, Looky here. A little Glitch seems to gotten its way onto the web.
+  - Don't cha worry. You're fine and dandy as long as you ain't gonna cause harm.
+  - Not like that new AI Poster Girl up in The Cyberverse.
+  - She be spreading all this miss-for-may-tion and pop-ups.
+  - "Wait\u2026"
+  - What if I got your help!
+  - 'I can send you to take out that AI before she goes and messes around and changes
+    the world too much.
+
+'
+  - How about it? You go take care of this, you might even find some of my friends
+    around.

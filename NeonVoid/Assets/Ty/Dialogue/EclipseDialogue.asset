@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3852ef6f29cb8445ba208d8ebb7f42c, type: 3}
+  m_Name: EclipseDialogue
+  m_EditorClassIdentifier: 
+  NpcName: Ecilpse
+  sentences:
+  - Oh Hello there!
+  - You must have just came from Grass World, heard you were sent over by Manet.
+  - Nice meeting ya.
+  - "[ DID YOU KNOW, THE SKY IS GREEN ]\r"
+  - Sorry, didn't mean to say that. Ever since that A.I has been here, its been messing
+    with us all.
+  - "Oh here it comes\u2026"
+  - '[ DID YOU KNOW, If you grow a banana in darkness it will become purple ]'
+  - "Also, if you're confused, just follow the RED ARROWS.\r"
+  - '[ RED ARROWS ]'

@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
 
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
+        nameText.text = dialogue.NpcName;
 
         sentences.Clear();
 
