@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/StormBattle/StormNBattleScene.unity
     guid: 24c7ae58a6637e347a22a4887d883d10
+  - enabled: 1
+    path: Assets/Scenes/FinalStorm.unity
+    guid: 271ce1863fc7b8c4fa49b5a14d7e1e85
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: cd8fc68e5e9bf064abf33065ff5f787b
+  - enabled: 1
+    path: Assets/Scenes/EndingSceneCyber.unity
+    guid: 245f6af5378666e47a410824d674c85d
+  - enabled: 1
+    path: Assets/Scenes/EndingSceneStorm.unity
+    guid: d3ef75eb4ac8e2941b8067e47add3dbc
   m_configObjects: {}
