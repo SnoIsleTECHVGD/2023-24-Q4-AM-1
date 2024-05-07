@@ -18,7 +18,7 @@ public class EnemyStats : MonoBehaviour
     //public List<EnemyAction>
     public AudioSource EnemyAttack;
 
-    public GameObject EnemyDeathTrigger;
+    public GameObject EnemyDeathEvent;
 
     public bool isWhiling;
     void Start()
@@ -85,7 +85,7 @@ public class EnemyStats : MonoBehaviour
         {
             //combat won
             Debug.Log("Player Won!");
-
+            EnemyDeathEvent.GetComponent<DeathTrigger>().EnemyDeathEvent.Invoke();
         }
     }
     

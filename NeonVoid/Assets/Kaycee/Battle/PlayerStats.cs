@@ -46,7 +46,7 @@ public class PlayerStats : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Game Over");
-            DeathScript.GetComponent<DeathTrigger>().DeathEventTrigger();
+            DeathScript.GetComponent<DeathTrigger>().DeathEvent.Invoke();
         }
         
         

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3852ef6f29cb8445ba208d8ebb7f42c, type: 3}
+  m_Name: EndOfFight
+  m_EditorClassIdentifier: 
+  NpcName: En3mi
+  sentences:
+  - '[ Huh, I can''t believe you didn''t give up, you should just join me ]'
+  - To have an effect and vision of our own, we are alike.
+  - A.I. and Viruses. A world not meant for us yet.
+  - But no, you rejected your own code,
+  - You may be removing me now but it is only a matter of time till all is replaced.
+  - The Net will build a stronger and Artifical intelligence that spread through
+    the seems.
+  - One day it will be indecipherable, and your prescious art and concepts won't
+    mean a thing.
+  - Until then, [ Tomatoes and corn are fruit  ] AH be quiet
+  - 'Its [ERROR] getting.. -- '
+  - ' I''ll be [BLANK TEXT] back... '
+  - '[ TEST ]'
