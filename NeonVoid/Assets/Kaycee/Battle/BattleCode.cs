@@ -65,20 +65,33 @@ public class BattleCode : MonoBehaviour
         discardPile.AddRange(gameManager.playerDeck);
         ShuffleCards();
         DrawCards(cardLimit);
+      
         turn = Turn.player;
 
     }
     #region round controller
     public void NewRound()
     {
-        if(turn == Turn.player)
+        
+        if (turn == Turn.player)
         {
-            foreach (CardCode card in cardsInHand)
+            int saveCount = cardsInHand.Count;
+            for (int i = 0; i < saveCount; i++)
             {
-                DiscardCard(card);
-                
+                DiscardCard(cardsInHand[0]);
             }
-            foreach(CardUI cardUI in InstantiatedCards)
+            foreach (CardUI cardUI in InstantiatedCards)
+            {
+                if (cardUI.gameObject.activeSelf)
+                    //Instantiate( cardUI.transform.position, Quaternion.identity);
+
+                    cardUI.gameObject.SetActive(false);
+                cardsInHand.Remove(cardUI.cards);
+            }
+            Debug.Log("mhm");
+            
+            
+            foreach (CardUI cardUI in InstantiatedCards)
             {
                 cardUI.gameObject.SetActive(true);
             }
@@ -97,20 +110,17 @@ public class BattleCode : MonoBehaviour
         {
             ShuffleCards();
         }
-        foreach (CardUI cardUI in InstantiatedCards)
-        {
-            if (cardUI.gameObject.activeSelf)
-                //Instantiate( cardUI.transform.position, Quaternion.identity);
-
-            cardUI.gameObject.SetActive(false);
-            cardsInHand.Remove(cardUI.cards);
-        }
+        
       
         
         
     } 
     private IEnumerator EnemyTurn()
     {
+        for(int i = 0; i<cardsInHand.Count; i++)
+        {
+            DiscardCard(cardsInHand[i]);
+        }
         yield return new WaitForSeconds(1); //place holder for now, change to length of enemies turn or animation
         Enemy.GetComponent<EnemyTurn>().isEnemyTurn = true;
         Debug.Log("EnemyTurn GO!");
@@ -122,9 +132,11 @@ public class BattleCode : MonoBehaviour
     #region card and deck functions
     public void ShuffleCards()
     {
+        discardPile.AddRange(cardsInHand);
         discardPile.Shuffle();
-        drawPile = discardPile;
-        //discardPile.Clear();
+        drawPile.Clear();
+        drawPile.AddRange(discardPile);
+        discardPile.Clear();
     }
     public void DisplayCardInHand(CardCode card)
     {
@@ -138,8 +150,9 @@ public class BattleCode : MonoBehaviour
         int DrawTotal = 0;
         while(DrawTotal < DrawAmount)
         {
-            if(drawPile.Count < 1)
+            if(drawPile.Count <= 1)
             {
+                Debug.Log("triggering function");
                 ShuffleCards();
             }
             cardsInHand.Add(drawPile[0]);
@@ -153,6 +166,7 @@ public class BattleCode : MonoBehaviour
     public void DiscardCard(CardCode card)
     {
         discardPile.Add(card);
+        cardsInHand.Remove(card);
          }
 
         #endregion
