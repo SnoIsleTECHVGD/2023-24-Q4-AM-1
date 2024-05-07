@@ -76,6 +76,11 @@ public class BattleCode : MonoBehaviour
             foreach (CardCode card in cardsInHand)
             {
                 DiscardCard(card);
+                
+            }
+            foreach(CardUI cardUI in InstantiatedCards)
+            {
+                cardUI.gameObject.SetActive(true);
             }
             turn = Turn.enemy;
             StartCoroutine(EnemyTurn());
