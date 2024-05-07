@@ -29,4 +29,5 @@ public class CardRewardManager : MonoBehaviour
             RewardsHolder[i].gameObject.SetActive(false);
 
     }
+  
 }
