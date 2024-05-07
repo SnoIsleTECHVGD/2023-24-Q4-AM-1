@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3852ef6f29cb8445ba208d8ebb7f42c, type: 3}
+  m_Name: BottleDialogue
+  m_EditorClassIdentifier: 
+  NpcName: AI Gen Bottle
+  sentences:
+  - '[ Hello B.B, I''ve been waiting for you. ]'
+  - '[ You have trained hard to prepare for this for many eons to battle the amazingly
+    fierce, En3mi.]'
+  - '[ Though as your water bottle mentor, I must let you know, you cannot defeat
+    her. ]'
+  - '[ I, I mean she is so much skilled and pretty than you''ll ever B. B. ]'
+  - '[ Also, there is no like, other way to her so, you know.]'
+  - '[ You should just give up. ]'
+  - '[ Hey! ]'
+  - '[ Stop whatever you just did alright. ]'
