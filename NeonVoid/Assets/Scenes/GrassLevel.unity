@@ -2011,8 +2011,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078420107}
-  - component: {fileID: 1078420106}
-  - component: {fileID: 1078420108}
+  - component: {fileID: 1078420109}
+  - component: {fileID: 1078420110}
   m_Layer: 0
   m_Name: Music
   m_TagString: GameMusic
@@ -2020,7 +2020,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1078420106
+--- !u!4 &1078420107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078420105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.37860107, y: -0.39492798, z: 47.61264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1078420109
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2116,22 +2131,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1078420107
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078420105}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37860107, y: -0.39492798, z: 47.61264}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1078420108
+--- !u!114 &1078420110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2140,12 +2140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078420105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75a6bc8d68b06c549827c250f152b14f, type: 3}
+  m_Script: {fileID: 11500000, guid: 617e21e428c48d449b9ba5ade2df97a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicClips:
-  - {fileID: 8300000, guid: d1b1b7f500be1e344928d38048309894, type: 3}
-  Audio: {fileID: 1078420106}
 --- !u!1 &1097761433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,7 +4540,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728632743}
-  m_LocalRotation: {x: 0.15450637, y: 0.2471711, z: -0.039958082, w: 0.9557393}
+  m_LocalRotation: {x: 0.1545064, y: 0.24717112, z: -0.039958093, w: 0.9557393}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5439,7 +5436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124291182}
-  m_LocalRotation: {x: 0.038134318, y: 0.5730216, z: -0.026706597, w: 0.81821686}
+  m_LocalRotation: {x: 0.03813432, y: 0.5730216, z: -0.026706597, w: 0.81821686}
   m_LocalPosition: {x: -78.86131, y: -8.425003, z: 8.012319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
