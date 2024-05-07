@@ -2201,7 +2201,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192737672}
-  m_LocalRotation: {x: 0.050839793, y: 0.91503245, z: -0.122071035, w: 0.3810901}
+  m_LocalRotation: {x: 0.0508398, y: 0.91503245, z: -0.12207106, w: 0.38109007}
   m_LocalPosition: {x: 7.8, y: 35.39, z: 5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9891,28 +9891,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 17142a591a84bff4ba223cc25c1a2cdb, type: 3}
---- !u!1 &1224024185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3397983738995018901, guid: 17142a591a84bff4ba223cc25c1a2cdb, type: 3}
-  m_PrefabInstance: {fileID: 1224024184}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1224024186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224024185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: abf837b1bf0d29242b89e40eb598eca1, type: 2}
 --- !u!1 &1228614445
 GameObject:
   m_ObjectHideFlags: 0
@@ -11367,6 +11345,7 @@ GameObject:
   - component: {fileID: 1420023189}
   - component: {fileID: 1420023188}
   - component: {fileID: 1420023187}
+  - component: {fileID: 1420023190}
   m_Layer: 0
   m_Name: ThirdPersonCam
   m_TagString: Untagged
@@ -11513,6 +11492,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420023190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420023186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: abf837b1bf0d29242b89e40eb598eca1, type: 2}
 --- !u!1 &1431310761
 GameObject:
   m_ObjectHideFlags: 0

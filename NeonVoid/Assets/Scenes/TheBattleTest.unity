@@ -282,18 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6503d2a1a5d9f134ea05300ae4edcea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Marble
-    sentences:
-    - Ha!   I am attacking you!   Surprise!
-    - You probably wondering why right?
-    - ...
-    - ' Silent type I see.'
-    - Well, you represent all forms of opposition to me.
-    - Imperfection... and [INSERT OTHER NEGATIVE ATTRIBUTES HERE]
-    - 'Your Apple to my Oranges... '
-    - Your Indroid to my Aphone...
-    - A TRUE ADVERSARY!
+  dialogue: {fileID: 0}
   dialogueManager: {fileID: 196393877}
 --- !u!1 &133739041 stripped
 GameObject:
@@ -1142,6 +1131,8 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   randNum: 0
   CurrentLocation: {fileID: 0}
+  PlayerAni: {fileID: 0}
+  EnemyAni: {fileID: 0}
   isEnemyTurn: 0
   hasTalked: 0
   setAttack: 0
@@ -1157,6 +1148,7 @@ MonoBehaviour:
   TopPoint: {fileID: 1709007641}
   UpperRightPoint: {fileID: 882913961}
   LowerRightPoint: {fileID: 2081164006}
+  PlayerHealth: {fileID: 0}
 --- !u!1 &729277118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775683821}
   - component: {fileID: 775683822}
+  - component: {fileID: 775683823}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1318,6 +1311,23 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1291146554}
+--- !u!114 &775683823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775683820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: abf837b1bf0d29242b89e40eb598eca1, type: 2}
 --- !u!1 &854336813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,10 +1494,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 882913961}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 882913966}
 --- !u!54 &882913964
 Rigidbody:
@@ -1548,10 +1560,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 1122664630}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 1122664635}
 --- !u!54 &1122664633
 Rigidbody:
@@ -2156,10 +2170,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 1588455735}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 1588455740}
 --- !u!54 &1588455738
 Rigidbody:
@@ -2371,10 +2387,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 1709007641}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 1709007646}
 --- !u!54 &1709007644
 Rigidbody:
@@ -2435,10 +2453,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 1806544177}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 1806544182}
 --- !u!54 &1806544180
 Rigidbody:
@@ -2668,6 +2688,9 @@ MonoBehaviour:
   electrifiedStorage: 0
   moveAmount: 0
   barkTextPlayer: []
+  DeathScript: {fileID: 0}
+  BattleMovementObject: {fileID: 0}
+  HealthObj: {fileID: 0}
 --- !u!1 &2081164006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d42ab631ded24814abf1a6c2d415e2c3, type: 3}
@@ -2688,10 +2711,12 @@ MonoBehaviour:
   Player: {fileID: 2018352506}
   CurrentLocation: {fileID: 2081164006}
   EnemySystem: {fileID: 725256268}
+  BattleMovObj: {fileID: 0}
   isAttacking: 0
   isCurrent: 0
   StandardMaterial: {fileID: 2100000, guid: 4dc226e94e26ee74580449e7a69ba93a, type: 2}
   AttackingMaterial: {fileID: 2100000, guid: 2d51de6ee4b099b42b6b5f7f7b0fec94, type: 2}
+  BeingAttacked: 0
   MeshRenderer: {fileID: 2081164010}
 --- !u!54 &2081164008
 Rigidbody:
