@@ -9,6 +9,8 @@ public class CardEffects : MonoBehaviour
     public PlayerStats playerStats;
     GameManager gameManager;
     public EnemyStats enemyStats;
+    public Animator EnemyAni;
+    public Animator PlayerAni;
     
     private void Awake()
     {
@@ -68,6 +70,9 @@ public class CardEffects : MonoBehaviour
     {
         int DmgEnemy = cardCode.damage;
         enemyStats.TakeDMG(DmgEnemy);
+        PlayerAni.SetTrigger("Attack");
+        EnemyAni.SetTrigger("Hurt");
+        Debug.Log("Attacks and Hurt");
     }
     public void MovePlayer()
     {

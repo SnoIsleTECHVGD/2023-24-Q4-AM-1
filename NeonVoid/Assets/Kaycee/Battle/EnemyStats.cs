@@ -22,7 +22,7 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         enemyRef = this.gameObject;
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        //playerRef = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class EnemyStats : MonoBehaviour
     {
         //place holder
         yield return new WaitForSeconds(0.5f);
-        player.TakeDamage();
+        //player.TakeDamage();
         yield return new WaitForSeconds(0.5f);
  
         
@@ -82,6 +82,7 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0)
         {
             //combat won
+            Debug.Log("Player Won!");
         }
     }
     

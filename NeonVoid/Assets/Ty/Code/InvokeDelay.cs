@@ -16,6 +16,7 @@ public class InvokeDelay : MonoBehaviour
         if(CanInvoke == true)
         {
             Invoke("InvokeCommand", DelaySeconds);
+            CanInvoke = false;
         }
     }
 

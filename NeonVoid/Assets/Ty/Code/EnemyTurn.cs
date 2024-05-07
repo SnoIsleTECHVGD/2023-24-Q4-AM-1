@@ -15,6 +15,8 @@ public class EnemyTurn : MonoBehaviour
 
     public int randNum;
     public GameObject CurrentLocation;
+    public Animator PlayerAni;
+    public Animator EnemyAni;
 
     public bool isEnemyTurn;
     public bool hasTalked;
@@ -59,12 +61,14 @@ public class EnemyTurn : MonoBehaviour
 
     public void AttackEffect()
     {
+
         if(isAttack1 == true)
         {
-            if(Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            if(CurrentLocation.GetComponent<DetectionScript>().BeingAttacked == true)
             {
-                Player.GetComponent<DemoPlayerAttributes>().Hp -= A1Damage;
+                Player.GetComponent<PlayerStats>().TakeDamage(A1Damage);
                 Debug.Log("HURT!");
+                PlayerAni.SetTrigger("Hurt");
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -79,10 +83,11 @@ public class EnemyTurn : MonoBehaviour
         }
         if (isAttack2 == true)
         {
-            if (Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            if (Player.GetComponent<DetectionScript>().BeingAttacked == true)
             {
-                Player.GetComponent<DemoPlayerAttributes>().Hp -= A2Damage;
+                Player.GetComponent<PlayerStats>().TakeDamage(A2Damage);
                 Debug.Log("HURT!");
+                PlayerAni.SetTrigger("Hurt");
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -97,10 +102,11 @@ public class EnemyTurn : MonoBehaviour
         }
         if (isAttack3 == true)
         {
-            if (Player.GetComponent<DemoPlayerAttributes>().beingAttacked == true)
+            if (Player.GetComponent<DetectionScript>().BeingAttacked == true)
             {
-                Player.GetComponent<DemoPlayerAttributes>().Hp -= A3Damage;
+                Player.GetComponent<PlayerStats>().TakeDamage(A3Damage);
                 Debug.Log("HURT!");
+                PlayerAni.SetTrigger("Hurt");
             }
 
             BottomPoint.GetComponent<DetectionScript>().isAttacking = false;
@@ -135,7 +141,7 @@ public class EnemyTurn : MonoBehaviour
         //}
         //if (randNum == 3)
         //{
-        //    Debug.Log("How's the weather?");
+        //    
         //}
         isEnemyTurn = false;
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StunDipper
   m_EditorClassIdentifier: 
   cardName: Stun Dipper
-  cardDescription: 2 Cost - 8 Damage - 1 movement
+  cardDescription: 2 Cost - 8 Damage
   power: 0
   attack: 1
   skill: 0

@@ -30,7 +30,7 @@ MonoBehaviour:
   block: 0
   overCharge: 0
   Vulnerable: 0
-  damage: 12
+  damage: 10
   moveAmount: 0
   cost: 2
   inflictNum: 0

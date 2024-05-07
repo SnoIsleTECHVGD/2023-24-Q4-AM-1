@@ -11,7 +11,7 @@ public class DetectionScript : MonoBehaviour
     public bool isCurrent;
     public Material StandardMaterial;
     public Material AttackingMaterial;
-
+    public bool BeingAttacked;
     public Renderer MeshRenderer;
 
     // Start is called before the first frame update
@@ -48,13 +48,13 @@ public class DetectionScript : MonoBehaviour
         Debug.Log(this.gameObject);
         if (isAttacking == true)
         {
-            Player.GetComponent<DemoPlayerAttributes>().beingAttacked = true;
+            BeingAttacked = true;
         }
     }
 
     private void OnTriggerExit(Collider Player)
     {
-        Player.GetComponent<DemoPlayerAttributes>().beingAttacked = false;
+        BeingAttacked = false;
         EnemySystem.GetComponent<EnemyTurn>().CurrentLocation = null;
     }
 

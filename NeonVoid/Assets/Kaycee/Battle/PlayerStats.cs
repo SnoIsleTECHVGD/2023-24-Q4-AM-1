@@ -6,6 +6,8 @@ public class PlayerStats : MonoBehaviour
 {
     public int health, overHeat, electrified, overHeatStorage, electrifiedStorage, moveAmount;
     public string[] barkTextPlayer;
+
+    
     
     // Start is called before the first frame update
     void Start()
@@ -31,9 +33,15 @@ public class PlayerStats : MonoBehaviour
         
 
     }
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
 
+        if(health <= 0)
+        {
+            Debug.Log("Game Over");
+        }
+        else
+        health -= amount;
     }
    
 }
