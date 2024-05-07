@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52fbe756e1ff56479fd2bfbc97e22f9, type: 3}
+  m_Name: Overheat
+  m_EditorClassIdentifier: 
+  cardName: Overheat
+  cardDescription: 1 cost - 2 damage
+  power: 0
+  attack: 1
+  skill: 0
+  movement: 0
+  specialCase: 0
+  fleeting: 0
+  inflictStatus: 0
+  Common: 0
+  Rare: 0
+  Legendary: 0
+  CardIcon: {fileID: -804998338, guid: fb119328a21846749aa7530fc8256cbf, type: 3}
+  overHeat: 0
+  electrified: 0
+  block: 0
+  overCharge: 0
+  Vulnerable: 0
+  damage: 2
+  moveAmount: 0
+  cost: 1
+  inflictNum: 0

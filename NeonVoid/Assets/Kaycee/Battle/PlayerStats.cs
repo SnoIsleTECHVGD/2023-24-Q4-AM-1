@@ -40,15 +40,16 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
-
-        if(health <= 0 || health == -health)
+        
+            health -= amount;
+        HealthObj.GetComponent<HealthDisplay>().healthAmount = health;
+        if (health <= 0)
         {
             Debug.Log("Game Over");
             DeathScript.GetComponent<DeathTrigger>().DeathEventTrigger();
         }
-        else
-        health -= amount;
-        HealthObj.GetComponent<HealthDisplay>().healthAmount = health;
+        
+        
     }
    
 }
