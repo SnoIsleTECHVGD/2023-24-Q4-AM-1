@@ -27,6 +27,6 @@ public class EngageCard : MonoBehaviour
 
     public void Engaged()
     {
-        Destroy(gameObject);
+        Card.Invoke();
     }
 }
