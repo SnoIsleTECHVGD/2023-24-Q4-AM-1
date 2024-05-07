@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardEffects : MonoBehaviour
 {
-    CardCode cardCode;
+    public CardCode cardCode;
     BattleCode battleCode;
     public PlayerStats playerStats;
     GameManager gameManager;
@@ -13,12 +13,13 @@ public class CardEffects : MonoBehaviour
     private void Awake()
     {
         battleCode = FindObjectOfType<BattleCode>();
-        cardCode = FindObjectOfType<CardCode>();
+        playerStats = FindObjectOfType<PlayerStats>();
+        enemyStats = FindObjectOfType<EnemyStats>();
     }
     public void AvailableActions(CardCode _cardCode, PlayerStats _playerStats, EnemyStats _enemyStats)
     {
         cardCode = _cardCode;
-
+        Debug.Log("Made it here");
         playerStats = _playerStats;
         enemyStats = _enemyStats;
         Debug.Log("card is being recognized");

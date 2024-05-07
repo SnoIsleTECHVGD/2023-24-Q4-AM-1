@@ -14,6 +14,7 @@ public class CardUI : MonoBehaviour
     private void Awake()
     {
         battleCode = FindObjectOfType<BattleCode>();
+        
     }
         public void SelectCard()
     {

@@ -36,6 +36,8 @@ public class BattleCode : MonoBehaviour
     public void Awake()
     {
         BeginCombat();
+
+        cardEffects = FindObjectOfType<CardEffects>();
     }
 
     public void PlayedCard(CardUI cardUI)
@@ -46,6 +48,7 @@ public class BattleCode : MonoBehaviour
         cardUI.gameObject.SetActive(false);
         cardsInHand.Remove(cardUI.cards);
         DiscardCard(cardUI.cards);
+        Debug.Log("This far");
     }
 
     
