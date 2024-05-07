@@ -116,7 +116,7 @@ public class BattleCode : MonoBehaviour
     {
         discardPile.Shuffle();
         drawPile = discardPile;
-        discardPile.Clear();
+        //discardPile.Clear();
     }
     public void DisplayCardInHand(CardCode card)
     {
