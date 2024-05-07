@@ -54,12 +54,13 @@ public class BattleCode : MonoBehaviour
         //trigger this first!
         drawPile.Clear(); //incase data is left over for whatever reason 
         energy = maxEnergy;
-        ShuffleCards();
+      
         foreach (CardCode card in cardsInHand)
         {
             DiscardCard(card);
         }
         discardPile.AddRange(gameManager.playerDeck);
+        ShuffleCards();
         DrawCards(cardLimit);
         turn = Turn.player;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardEffects : MonoBehaviour
 {
-    public CardCode cardCode;
+    CardCode cardCode;
     BattleCode battleCode;
     public PlayerStats playerStats;
     GameManager gameManager;
